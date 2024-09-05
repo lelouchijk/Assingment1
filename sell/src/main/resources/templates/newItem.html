@@ -1,0 +1,19 @@
+<html xmls:th = "http://www.thymeleaf.org">
+<head>
+	<title> New Car Information</title>
+</head>
+<body>
+	<form th:action="@{/itemSystem/addItem}" method="post" th:object = "${item}">
+	Enter quantity:<input type="text" name="quantity" id="quantity" th:field = "*{quantity}"> <br>
+	Enter Price:<input type="text" name="price" id="price" th:field = "*{price}"> <br>
+	Enter Category:<select name="category" multiple = "multiple">
+			<option  th:each="c : ${categoryList}" th:field="${item.category}" th:text="${c.categoryName}" th:value="${c.categoryId}"></option>
+			</select>
+	<br> <br>
+	
+	<input type="submit" value="Add Item"> 
+	<input type="button" value="Cancel"> 
+	</form>
+</body>
+
+</html>

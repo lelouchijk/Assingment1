@@ -1,0 +1,20 @@
+<html xmls:th = "http://www.thymeleaf.org">
+<head>
+	<title> New Car Information</title>
+</head>
+<body>
+	<form th:action="@{/categorySystem/addCategory}" method="post" th:object = "${category}">
+	Enter Category Name:<input type="text" name="categoryName" id="categoryName" th:field = "*{categoryName}"> <br>
+<!--	Enter Price:<input type="text" name="price" id="price" th:field = "*{price}"> <br>
+	Enter Category:<input type="text" name="category" id="category" th:field = "*{category}"> <br>
+	Enter Year:<input type="text" name="year" id="year" th:field = "*{year}"> <br>
+	Enter Price:<input type="text" name="price" id="price" th:field = "*{price}"> <br>
+	 -->
+	<br> <br>
+	
+	<input type="submit" value="Add Item"> 
+	<input type="button" value="Cancel"> 
+	</form>
+</body>
+
+</html>
