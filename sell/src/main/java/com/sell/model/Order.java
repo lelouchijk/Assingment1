@@ -2,28 +2,52 @@ package com.sell.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "ordervouncher")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long orderId;
-//
-//    @ManyToOne
-//    @JoinColumn()
+
+    private String itemName;
     private int quantity;
     private int price;
-    private int discount;
 
+    private int total;
+
+    @ManyToOne
+    @JoinColumn(name = "shopId")
+    private Shop shop;
+
+    @ManyToMany
+    @JoinTable(name = "itemOrder",joinColumns = @JoinColumn(name = "orderId"),inverseJoinColumns = @JoinColumn(name = "itemId"))
+    private List<Item> item;
     public Order() {
         super();
     }
 
-    public Order(int quantity, int price, int discount) {
-        super();
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+
+    public Order(String itemName, int quantity, int price, int total, Shop shop, List<Item> item, User user) {
+        this.itemName = itemName;
         this.quantity = quantity;
         this.price = price;
-        this.discount = discount;
+        this.total = total;
+        this.shop = shop;
+        this.item = item;
+        this.user = user;
+    }
+
+    public Order(int quantity, int price, Shop shop, List<Item> item, User user) {
+        this.quantity = quantity;
+        this.price = price;
+        this.shop = shop;
+        this.item = item;
+        this.user = user;
     }
 
     public long getOrderId() {
@@ -50,11 +74,44 @@ public class Order {
         this.price = price;
     }
 
-    public int getDiscount() {
-        return discount;
+
+    public Shop getShop() {
+        return shop;
     }
 
-    public void setDiscount(int discount) {
-        this.discount = discount;
+    public void setShop(Shop shop) {
+        this.shop = shop;
+    }
+
+    public List<Item> getItem() {
+        return item;
+    }
+
+    public void setItem(List<Item> item) {
+        this.item = item;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

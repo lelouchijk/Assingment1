@@ -12,8 +12,8 @@ public class Role {
     private long roleId;
     private String roleName;
 
-    @OneToMany(mappedBy = "role") // Reference to the 'role' field in 'Company'
-    private List<User> users;
+//    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL,orphanRemoval = true)
+//    private List<User> users;
 
     public long getRoleId() {
         return roleId;
@@ -41,11 +41,13 @@ public class Role {
 
     }
 
-    public List<User> getUsers() {
-        return users;
-    }
+//    public List<User> getUsers() {
+//        return users;
+//    }
+//
+//    public void setUsers(List<User> users) {
+//        this.users = users;
+//    }
 
-    public void setUsers(List<User> users) {
-        this.users = users;
-    }
+
 }

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>All Items</title>
+</head>
+<body>
+<h2>All Available Items</h2>
+<div th:if="${not #lists.isEmpty(itemList)}">
+  <table border="1">
+    <tr>
+      <th>Item Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+    <tr th:each="item : ${itemList}">
+      <td th:text="${item.itemName}"></td>
+      <td th:text="${item.price}"></td>
+      <td>
+<!--        <form th:action="@{/userSystem/addToCart}" method="post">-->
+<!--          <input type="number" name="quantity" min="1" placeholder="Quantity">-->
+<!--          <button type="submit">Add to Cart</button>-->
+<!--        </form>-->
+
+        <form th:action="@{/userSystem/addToCart}" method="POST">
+          <input type="hidden" name="itemId" value="10">
+          <input type="number" name="quantity" value="1" min="1">
+          <button type="submit">Add to Cart</button>
+        </form>
+      </td>
+      <td>
+        <form th:action="@{/userSystem/buyNow}" method="post">
+          <input type="hidden" name="itemId" th:value="${item.itemId}">
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </td>
+    </tr>
+  </table>
+</div>
+<a th:href="@{/userSystem/viewCart}">View Cart</a>
+</body>
+</html>

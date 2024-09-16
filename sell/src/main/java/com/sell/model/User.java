@@ -15,29 +15,44 @@ public class User {
     private String email;
     private String password;
 
-    @ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-    @JoinTable(
-            name = "user_item",
-            joinColumns = @JoinColumn(name = "userId"),
-            inverseJoinColumns = @JoinColumn(name = "itemId")
-    )
-    private List<Item> items;
+//    @OneToMany(mappedBy = "itemOwner",cascade = CascadeType.ALL)
+//    private List<Item> items;
 
     @ManyToOne
     @JoinColumn(name = "roleId")
     private Role role;
 
+//    @OneToMany(mappedBy = "shopOwner", cascade = CascadeType.ALL,orphanRemoval = true)
+//    private List<Shop> shop;
+
     public User() {
         super();
     }
 
-    public User(String firstName, String lastName, String email, String password) {
-        super();
+    public User(String firstName, String lastName, String email, String password, List<Item> items, Role role, List<Shop> shop) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.role = role;
+
     }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+//    public List<Item> getItems() {
+//        return items;
+//    }
+//
+//    public void setItems(List<Item> items) {
+//        this.items = items;
+//    }
 
     public String getFirstName() {
         return firstName;
@@ -70,4 +85,23 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+//    public List<Shop> getShop() {
+//        return shop;
+//    }
+//
+//    public void setShop(List<Shop> shop) {
+//        this.shop = shop;
+//    }
+
+
+
 }

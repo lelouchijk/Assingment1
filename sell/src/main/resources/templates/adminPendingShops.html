@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pending Shops</title>
+</head>
+<body>
+<h1>Pending Shops</h1>
+
+<table border="1">
+  <tr>
+    <th>Shop Name</th>
+    <th>Owner</th>
+    <th>Action</th>
+  </tr>
+  <tr th:each="shop : ${pendingShops}">
+    <td th:text="${shop.shopName}"></td>
+    <td th:text="${shop.shopOwner.getFirstName()+shop.shopOwner.getLastName()}"></td>
+    <td>
+      <form th:action="@{/adminSystem/approveShop/{shopId}(shopId=${shop.shopId})}" method="post">
+        <button type="submit">Approve</button>
+      </form>
+      <form th:action="@{/adminSystem/rejectShop/{shopId}(shopId=${shop.shopId})}" method="post">
+        <button type="submit">Reject</button>
+      </form>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>

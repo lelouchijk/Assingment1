@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en", xmlns:th ="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Update Item</title>
+</head>
+<body>
+<form th:action="@{/userSystem/updateUserProcess/{id}(id=${user.userId})}" method="post" th:object="${user}">
+    Enter First Name: <input type="text" name="firstName" id="firstName" th:field="*{firstName}"> <br>
+    Enter Last Name <input type="text" name="lastName" id="lastName" th:field="*{lastName}"> br
+
+    <input type="submit" value="Update User Information">
+    <input type="button" value="Cancel">
+</form>
+<a th:href="@{/userSystem/deleteUser/{id}(id=${user.userId})}">Delete</a>
+</body>
+</html>

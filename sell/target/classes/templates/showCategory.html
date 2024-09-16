@@ -1,21 +1,30 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<!doctype html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show Category</title>
 </head>
 <body>
 <div th:if="${not #lists.isEmpty(categoryList)}">
-  <table border="2">
-    <tr>
-      <th>Category</th>
-    </tr>
-    <tr th:each="category : ${categoryList}">
-      <td th:text="${category.categoryName}"></td>
-      <td><a th:href="@{/categorySystem/updateCategory/{id}(id=${category.categoryId})}">Update</a></td>
-      <td><a th:href="@{/categorySystem/deleteCategory/{id}(id=${category.categoryId})}">Delete</a></td>
-    </tr>
-  </table>
+    <table border="2">
+        <tr>
+            <th>Category</th>
+        </tr>
+        <tr th:each="category : ${categoryList}">
+            <td th:text="${category.categoryName}"></td>
+            <td><a th:href="@{/adminSystem/updateCategory/{id}(id=${category.categoryId})}">Update</a></td>
+            <td><a th:href="@{/adminSystem/deleteCategory/{id}(id=${category.categoryId})}">Delete</a></td>
+        </tr>
+    </table>
 </div>
 <div th:if="${#lists.isEmpty(categoryList)}">
-  Empty Category Information
+    Empty Category Information
 </div>
+</body>
+
+
 </body>
 </html>

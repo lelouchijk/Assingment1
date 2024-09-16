@@ -1,14 +1,9 @@
 package com.sell.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
 @Entity
 public class Category {
@@ -17,8 +12,12 @@ public class Category {
 	private long categoryId;
 	private String categoryName;
 	
-	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Item> items;
+//	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+//	private List<Item> items = new ArrayList<>();
+
+	@ManyToOne
+	@JoinColumn(name = "shopId")
+	private Shop shop;
 	
 	public Category(String categoryName) {
 		super();
@@ -45,13 +44,13 @@ public class Category {
 		this.categoryId = categoryId;
 	}
 
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+//	public List<Item> getItems() {
+//		return items;
+//	}
+//
+//	public void setItems(List<Item> items) {
+//		this.items = items;
+//	}
 
 
 	
