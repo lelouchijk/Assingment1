@@ -100,21 +100,29 @@ body {
 
 #sidebar .side-menu:last-child {
 	margin-top: auto ;
-	padding: 20px 0px;
+	
 
 }
+
+
+#sidebar ul{
+	margin: 20px;
+	padding: 0px;
+}
+
 
 
 #sidebar .side-menu li {
 	height: 48px;
 	background: transparent;
-	margin-left: 6px;
 	border-radius: 48px 0 0 48px;
 	padding: 4px;
 }
 #sidebar .side-menu li.active {
-	background: var(--grey);
+	/* background: var(--grey); */
 	position: relative;
+	
+
 }
 #sidebar .side-menu li.active::before,
 #sidebar .side-menu li.active::after {
@@ -126,7 +134,8 @@ body {
 	/* top: -40px; */
 	right: 0;
 	box-shadow: 20px 20px 0 var(--grey);
-	z-index: -1;
+	/* background-color: red; */
+	/* z-index: -1; */
 }
 #sidebar .side-menu li.active::before {
     top: -40px;
@@ -169,7 +178,7 @@ body {
 	/* min-width: calc(60px  - ((4px + 6px) * 2)); */
     min-width: 48px;
 	display: flex;
-	justify-content: center;
+	/* justify-content: flex-start; */
 }
 /* SIDEBAR */
 
