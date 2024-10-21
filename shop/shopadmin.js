@@ -16,13 +16,27 @@ allSideMenu.forEach(item=> {
 
 // TOGGLE SIDEBAR
 
-const sidebarLink = document.querySelector('#sidebar .brand');
-const sidebar = document.querySelector('#sidebar');
-const content = document.querySelector('#content');
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector('#sidebar');
+    const toggleButton = document.querySelector('#sidebar .brand');
 
-sidebarLink.addEventListener('click', function (e) {
-    e.preventDefault(); 
-    sidebar.classList.toggle('hide');
+    const savedState = localStorage.getItem('sidebarState');
+
+    if (savedState === 'active') {
+        sidebar.classList.add('active');
+    }
+
+    toggleButton.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        sidebar.classList.toggle('active');
+
+        if (sidebar.classList.contains('active')) {
+            localStorage.setItem('sidebarState', 'active');
+        } else {
+            localStorage.setItem('sidebarState', 'collapsed');
+        }
+    });
 });
 
 

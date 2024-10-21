@@ -54,11 +54,11 @@ body {
 #sidebar {
 	display: flex;
 	flex-direction: column;
-	/* height: 100vh; */
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 280px;
+	/* width: 280px; */
+    width: 60px;
 	height: 100%;
 	background: var(--light);
 	z-index: 2000;
@@ -70,8 +70,8 @@ body {
 #sidebar::--webkit-scrollbar {
 	display: none;
 }
-#sidebar.hide {
-	width: 60px;
+#sidebar.active {
+	width: 250px;
 }
 #sidebar .brand {
 	font-size: 24px;
@@ -95,15 +95,13 @@ body {
 }
 #sidebar .side-menu {
 	width: 100%;
-	/* gap: 30px; */
-	/* margin-top: 48px; */
+
 }
 
 #sidebar .side-menu:last-child {
-    /* margin-left: 30px;  */
 	margin-top: auto ;
 	padding: 20px 0px;
-	/* background-color: red; */
+
 }
 
 
@@ -118,27 +116,26 @@ body {
 	background: var(--grey);
 	position: relative;
 }
-#sidebar .side-menu li.active::before {
-	content: '';
-	position: absolute;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	top: -40px;
-	right: 0;
-	box-shadow: 20px 20px 0 var(--grey);
-	z-index: -1;
-}
+#sidebar .side-menu li.active::before,
 #sidebar .side-menu li.active::after {
 	content: '';
 	position: absolute;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
-	bottom: -40px;
+	/* top: -40px; */
 	right: 0;
-	box-shadow: 20px -20px 0 var(--grey);
+	box-shadow: 20px 20px 0 var(--grey);
 	z-index: -1;
+}
+#sidebar .side-menu li.active::before {
+    top: -40px;
+	box-shadow: 20px 20px 0 var(--grey);
+}
+
+#sidebar .side-menu li.active::after {
+    bottom: -40px;
+	box-shadow: 20px -20px 0 var(--grey);
 }
 #sidebar .side-menu li a {
 	width: 100%;
@@ -151,12 +148,14 @@ body {
 	color: var(--dark);
 	white-space: nowrap;
 	overflow-x: hidden;
+    transition: width 0.3s ease;
 }
 #sidebar .side-menu.top li.active a {
 	color: var(--blue);
 }
-#sidebar.hide .side-menu li a {
-	width: calc(48px - (4px * 2));
+#sidebar.active .side-menu li a {
+	/* width: calc(48px - (4px * 2)); */
+    width: 100%;
 	transition: width .3s ease;
 }
 #sidebar .side-menu li a.logout {
@@ -167,7 +166,8 @@ body {
 	color: var(--blue);
 }
 #sidebar .side-menu li a .bx {
-	min-width: calc(60px  - ((4px + 6px) * 2));
+	/* min-width: calc(60px  - ((4px + 6px) * 2)); */
+    min-width: 48px;
 	display: flex;
 	justify-content: center;
 }
@@ -184,7 +184,7 @@ body {
 	left: 280px;
 	transition: .3s ease;
 }
-#sidebar.hide ~ #content {
+#sidebar ~ #content {
 	width: calc(100% - 60px);
 	left: 60px;
 }

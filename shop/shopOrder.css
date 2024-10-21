@@ -381,6 +381,7 @@ main.table {
     border-radius: .6rem;
     overflow: auto;
     overflow: overlay;
+	
 }
 
 .table__body::-webkit-scrollbar {
