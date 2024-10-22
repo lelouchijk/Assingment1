@@ -269,7 +269,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--blue);
+	background: var(--dark);
 	color: var(--light);
 	font-size: 18px;
 	border: none;
@@ -319,7 +319,7 @@ body {
 	left: 2px;
 	bottom: 2px;
 	width: calc(25px - 4px);
-	background: var(--blue);
+	background: var(--dark);
 	border-radius: 50%;
 	transition: all .3s ease;
 }

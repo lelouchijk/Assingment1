@@ -317,7 +317,7 @@ body {
 	left: 2px;
 	bottom: 2px;
 	width: calc(25px - 4px);
-	background: var(--blue);
+	background: var(--dark);
 	border-radius: 50%;
 	transition: all .3s ease;
 }
