@@ -168,15 +168,12 @@
 	
 						<thead>
 							<tr>
-								<th>S.No</th>
-								<th>Picture</th>
-								<th>Name</th>
-								<th>Age</th>
-								<th>City</th>
-								<th>Email</th>
-								<th>Phone</th>
-								<th>Post</th>
-								<th>Start Date</th>
+								<th>Item ID</th>
+								<th>Item Photo</th>
+								<th>Item Name</th>
+								<th>Date</th>
+								<th>Price</th>
+								<th>Quantity</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -216,33 +213,19 @@
 		
 								<div class="inputField">
 									<div>
-										<label for="name">Name:</label>
+										<label for="name">Item Name:</label>
 										<input type="text" name="" id="name" required>
 									</div>
+									
 									<div>
-										<label for="age">Age:</label>
-										<input type="number" name="" id="age" required>
+										<label for="price">Price:</label>
+										<input type="number" name="" id="price" required>
 									</div>
 									<div>
-										<label for="city">City:</label>
-										<input type="text" name="" id="city" required>
+										<label for="quantity">Quantity:</label>
+										<input type="number" name="" id="quantity" required>
 									</div>
-									<div>
-										<label for="email">E-mail:</label>
-										<input type="email" name="" id="email" required>
-									</div>
-									<div>
-										<label for="phone">Number:</label>
-										<input type="text" name="" id="phone" minlength="11" maxlength="11" required>
-									</div>
-									<div>
-										<label for="post">Post:</label>
-										<input type="text" name="" id="post" required>
-									</div>
-									<div>
-										<label for="sDate">Start Date:</label>
-										<input type="date" name="" id="sDate" required>
-									</div>
+									
 								</div>
 		
 							</form>
@@ -269,6 +252,8 @@
 		
 						<div class="modal-body">
 							<!-- View Eyes Icon  -->
+
+
 							<form action="#" id="myForm">
 		
 								<div class="card imgholder">
@@ -277,32 +262,16 @@
 		
 								<div class="inputField">
 									<div>
-										<label for="name">Name:</label>
+										<label for="name">Item Name</label>
 										<input type="text" name="" id="showName" disabled>
 									</div>
 									<div>
-										<label for="age">Age:</label>
-										<input type="number" name="" id="showAge" disabled>
+										<label for="price">Price</label>
+										<input type="number" name="" id="showPrice" disabled>
 									</div>
 									<div>
-										<label for="city">City:</label>
-										<input type="text" name="" id="showCity" disabled>
-									</div>
-									<div>
-										<label for="email">E-mail:</label>
-										<input type="email" name="" id="showEmail" disabled>
-									</div>
-									<div>
-										<label for="phone">Number:</label>
-										<input type="text" name="" id="showPhone" minlength="11" maxlength="11" disabled>
-									</div>
-									<div>
-										<label for="post">Post:</label>
-										<input type="text" name="" id="showPost" disabled>
-									</div>
-									<div>
-										<label for="sDate">Start Date:</label>
-										<input type="date" name="" id="showsDate" disabled>
+										<label for="quantity">Quantity</label>
+										<input type="number" name="" id="showQuantity" disabled>
 									</div>
 								</div>
 		
