@@ -345,9 +345,56 @@ body {
 
 /* Table  */
 
+
+
+.col-12 .table{
+    width: 98%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    /* border-radius: 3rem; */
+    overflow: auto;
+    overflow: overlay;
+
+}
+
+.col-12 .table::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.col-12 .table::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.col-12 .table:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+
+
+table, th, td{
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: center;
+}
+
+thead tr {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
 table tr td{
     vertical-align: middle;
 }
+
+
 
 
 
