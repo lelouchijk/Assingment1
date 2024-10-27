@@ -352,14 +352,13 @@ main.table1 {
 }
 
 .table__header .input-group {
-    width: 35%;
+    width: 50%;
     height: 100%;
     background-color: #fff5;
     padding: 0 .8rem;
     border-radius: 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+	margin: auto auto;
     transition: .2s;
 }
 
@@ -412,13 +411,13 @@ table {
     width: 100%;
 }
 
-td img {
+/* td img {
     width: 36px;
     height: 36px;
     margin-right: .5rem;
     border-radius: 50%;
     vertical-align: middle;
-}
+} */
 
 table, th, td {
     border-collapse: collapse;
@@ -472,7 +471,8 @@ tbody tr.hide td img {
 .status {
     padding: .4rem 0;
     border-radius: 2rem;
-    text-align: center;
+	margin: auto auto;
+
 }
 
 .status.delivered {
@@ -492,37 +492,37 @@ tbody tr.hide td img {
 .status.shipped {
     background-color: #6fcaea;
 }
-
+/* 
 @media (max-width: 1000px) {
     td:not(:first-of-type) {
         min-width: 12.1rem;
     }
-}
+} */
 
 thead th span.icon-arrow {
     display: inline-block;
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 50%;
-    border: 1.4px solid transparent;
-    text-align: center;
-    font-size: 1rem;
-    margin-left: .5rem;
+    /* width: 1.3rem;
+    height: 1.3rem; */
+    /* border-radius: 50%;	 */
+    /* border: 1.4px solid transparent; */
+    /* text-align: center; */
+    /* font-size: 1rem;
+    margin-left: .5rem; */
     transition: .2s ease-in-out;
 }
 
-thead th:hover span.icon-arrow {
+/* thead th:hover span.icon-arrow {
     border: 1.4px solid #6c00bd;
-}
+} */
 
 thead th:hover {
     color: #6c00bd;
 }
 
-thead th.active span.icon-arrow {
+/* thead th.active span.icon-arrow {
     background-color: #6c00bd;
     color: #fff;
-}
+} */
 
 thead th.asc span.icon-arrow {
     transform: rotate(180deg);
