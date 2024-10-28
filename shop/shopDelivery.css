@@ -443,9 +443,9 @@ body {
     text-align: center;
 }
 #content main .table-data .todo .todo-list li p{
-    /* background-color: red; */
+    
     padding: auto auto;
-    margin: auto auto;
+    margin: auto 0;
 }
 
 #content main .table-data .todo .todo-list li .bx {
@@ -493,6 +493,13 @@ body {
         margin: 0;
         vertical-align: middle;
     }
+
+    tr .td-class button{
+        /* padding: 5px 20px; */
+        margin: 5px 20px;
+    }
+
+
     
     .actionA, .actionR {
         padding: 5px 10px;
@@ -501,14 +508,14 @@ body {
     }
     
     .actionA {
-        background-color: #4CAF50; /* Green for Accept */
+        background-color: #005c29; /* Green for Accept */
         color: white;
         border: none;
         border-radius: 5px;
     }
     
     .actionR {
-        background-color: #f44336; /* Red for Reject */
+        background-color: red; /* Red for Reject */
         color: white;
         border: none;
         border-radius: 5px;

@@ -400,6 +400,20 @@ table tr td{
 
 td button{
     margin: 5px;
+    padding: 3px 20px;
+    border-radius: .4rem;
+}
+
+td .editing{
+    background-color: #005c29;
+    color: white;
+    border: none;
+}
+
+td .deleting {
+    background-color: red;
+    color: white;
+    border: none;
 }
 
 td button i{
