@@ -88,8 +88,6 @@ body {
 	padding-bottom: 20px;
 	box-sizing: content-box;
 }
-
-
 #sidebar .brand .bi {
 	min-width: 60px;
 	display: flex;
@@ -162,11 +160,8 @@ body {
     transition: width 0.3s ease;
 }
 #sidebar .side-menu.top li.active a {
-	color: black;
+	color: var(--blue);
 }
-
-
-
 #sidebar.active .side-menu li a {
 	/* width: calc(48px - (4px * 2)); */
     width: 100%;
@@ -176,20 +171,10 @@ body {
 	color: var(--red);
 	
 }
-#sidebar .side-menu.top li a .bx:hover {
-	color: var(--blue); 
+#sidebar .side-menu.top li a:hover {
+	color: var(--blue);
 }
-
-#sidebar .side-menu li a .ppa-order:hover{
-    color: black;
-	
-}
-
-
-
-
-
-#sidebar .side-menu li a i {
+#sidebar .side-menu li a .bx {
 	/* min-width: calc(60px  - ((4px + 6px) * 2)); */
     min-width: 48px;
 	display: flex;
@@ -348,241 +333,175 @@ body {
 
 
 /* MAIN */
-
-#content main{
-    width: 100%;
-    padding: 36px 24px;
-    font-family: var(--poppins);
-	max-height: calc(100vh - 56px);
-	overflow-y: auto;
+.itemInsert{
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.3);
+    background: transparent;
+    user-select: none;
+    /* height: 100vh; */
 }
 
-#content main .table-data {
-	display: flex;
-	flex-wrap: wrap;
-	grid-gap: 24px;
-	margin-top: 24px;
+.itemInsert header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    padding: 10px 20px;
+}
+
+.itemInsert header .closeBtn{
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0 1px;
+	width: 25px;
+	height: 25px;
+	background-color: transparent;
+	/* border-radius: .4rem; */
+	border: none;
+	/* border-radius: 100%; */
+}
+
+.itemInsert header .closeBtnSvg{
+	color: var(--red);
 	width: 100%;
-	color: var(--dark);
+	
+	
 }
-#content main .table-data > div {
-	border-radius: 20px;
-	background: var(--light);
-	padding: 24px;
-	overflow-x: auto;
+
+.itemInsert header .closeBtn:hover{
+	border: none;
+    transition: 0.3s;
 }
-#content main .table-data .head {
-	display: flex;
+
+.itemInsert form{
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.itemInsert .imgholder{
+    width: 200px;
+    height: 200px;
+    /* box-shadow: 0 0 5px rgba(0,0,0,0.5); this is for img shadow  */
+    border-radius: 3px; 
+    /* overflow: hidden; */
+    position: relative;
+    /* margin-left: px; */
+    margin-top: 36px;
+
+}
+
+.itemInsert .imgholder .upload{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.1);
+    justify-content: center;
 	align-items: center;
-	grid-gap: 16px;
-	margin-bottom: 24px;
-}
-#content main .table-data .head h3 {
-	margin-right: auto;
-	font-size: 24px;
-	font-weight: 600;
-}
-#content main .table-data .head .bx {
-	cursor: pointer;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
 }
 
-#content main .table-data .order {
-	flex-grow: 1;
-	flex-basis: 500px;
+.imgholder:hover .upload{
+    display: flex;
+    /* visibility: hidden; */
 }
-#content main .table-data .order table {
-	width: 100%;
-	border-collapse: collapse;
+
+
+/* this line is error  */
+.imgholder .upload input{
+    display: none;
 }
-#content main .table-data .order table th {
-	padding-bottom: 12px;
-	font-size: 13px;
-	text-align: left;
-	border-bottom: 1px solid var(--grey);
+
+.imgholder .upload i {
+    color: white;
+    font-size: 35px;
+    font-weight: 300;
 }
-#content main .table-data .order table td {
-	padding: 16px 0;
+
+/* .imgholder{
+    width: 200px;
+} */
+
+
+
+.imgholder .image{
+    width: 200px;
+    height: 100%;
 }
-#content main .table-data .order table tr td:first-child {
+
+form .inputFieled .nameField,
+form .inputFieled .priceSizeField,
+form .inputFieled .quantityColorField,
+form .inputFieled .productDescription{
+    display: flex;
+    justify-content: space-between;
+    /* gap: 50px; */
+    /* padding: 100px auto; */
+    margin-left: 50px;
+    /* border: red; */
+}
+
+.form_control{
+    padding: 10px 20px;
+   
+}
+
+.form_control input{
+    border-radius: 5px;
+    border: 1px solid var(--dark);
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s;
+	
+    
+}
+
+form .inputFieled .nameField,
+form .inputFieled .priceSizeField,
+form .inputFieled .quantityColorField{
+    width: 200px;
+}
+
+/* form .inputFieled .productDescription{
+    width: 500px;
+    height: 300px;
+} */
+
+form .inputFieled .productDescription textarea{
+    width: 900px;
+    height: 140px;
+	overflow: hidden;
+	border: 1px solid var(--dark);
+	background-color: transparent;
+}
+
+
+
+.inputFieled .form_control label{
+    display: block;
+    /* color: var(--blue); */
+    margin-bottom: 5px;
+}
+
+.submit{
 	display: flex;
-	align-items: center;
-	grid-gap: 12px;
-	padding-left: 6px;
-}
-#content main .table-data .order table td img {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	object-fit: cover;
-}
-#content main .table-data .order table tbody tr:hover {
-	background: var(--grey);
-}
-#content main .table-data .order table tr td .status {
-	font-size: 10px;
-	padding: 6px 16px;
-	color: var(--light);
-	border-radius: 20px;
-	font-weight: 700;
-}
-#content main .table-data .order table tr td .status.completed {
-	background: var(--blue);
-}
-#content main .table-data .order table tr td .status.process {
-	background: var(--yellow);
-}
-#content main .table-data .order table tr td .status.pending {
-	background: var(--orange);
+	justify-content: flex-end;
+	background-color: transparent;
+	margin-right: 50px;
 }
 
-
-#content main .table-data .todo {
-	flex-grow: 1;
-	flex-basis: 300px;
+.submitBtn{
+	border-radius: .4rem;
+	width: 70px;
+	height: 30px;
+	background-color: var(--blue);
+	border: none;
+	/* color: white; */
 }
-#content main .table-data .todo .todo-list {
-	width: 100%;
-}
-#content main .table-data .todo .todo-list li {
-	width: 100%;
-    height: 10vh;
-	margin-bottom: 16px;
-	background: var(--grey);
-	border-radius: 10px;
-	padding: 14px 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-    text-align: center;
-}
-#content main .table-data .todo .todo-list li p{
-    
-    padding: auto auto;
-    margin: auto 0;
-}
-
-#content main .table-data .todo .todo-list li .bx {
-	cursor: pointer;
-}
-#content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--blue);
-}
-#content main .table-data .todo .todo-list li.not-completed {
-	border-left: 10px solid var(--orange);
-}
-#content main .table-data .todo .todo-list li:last-child {
-	margin-bottom: 0;
-}
-
-
-
-    tbody::-webkit-scrollbar {
-        width: 0.5rem;
-        height: 0.5rem;
-    }
-    
-    tbody::-webkit-scrollbar-thumb {
-        border-radius: .5rem;
-        background-color: #0004;
-        visibility: hidden;
-    }
-    
-    tbody:hover::-webkit-scrollbar-thumb {
-        visibility: visible;
-    }
-
-
-    
-    tr img {
-        width: 40px; 
-        height: 40px;
-        margin-right: 10px;
-        vertical-align: middle;
-    }
-    
-    tr p {
-        display: inline;
-        font-weight: bold;
-        margin: 0;
-        vertical-align: middle;
-    }
-
-    tr .td-class button{
-        /* padding: 5px 20px; */
-        margin: 5px 20px;
-    }
-
-
-    
-    .actionA, .actionR {
-        padding: 5px 10px;
-        font-size: 14px;
-        cursor: pointer;
-    }
-    
-    .actionA {
-        background-color: #005c29; /* Green for Accept */
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-    
-    .actionR {
-        background-color: red; /* Red for Reject */
-        color: white;
-        border: none;
-        border-radius: 5px;
-    }
-    
-
-
-
-
-    table, th, td {
-        border-collapse: collapse;
-        padding: 1rem; 
-        text-align: center;
-    }
-
-    thead th {
-        
-        width: 40%;
-        align-items: center;
-        align-content: center;
-        position: sticky;
-        /* background-color: #d5d1defe; */
-        cursor: pointer;
-        text-transform: capitalize;  
-        
-    }
-
-    tbody tr:nth-child(even) {
-        background-color: #0000000b;
-    }
-
-    tbody tr {
-        --delay: .1s;
-        transition: .5s ease-in-out var(--delay), background-color 0s;
-    }
-    
-    tbody tr.hide {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-    
-    tbody tr:hover {
-        background-color: white !important;
-    }
-    
-    tbody tr td, tbody tr td p, tbody tr td img {
-        transition: .2s ease-in-out;
-    }
-    
-    tbody tr.hide td, tbody tr.hide td p {
-        padding: 0;
-        font: 0 / 0 sans-serif;
-        transition: .2s ease-in-out .5s;
-    }
 
 
 /* MAIN */
@@ -640,7 +559,7 @@ body {
 
     #sidebar .side-menu li a .bx {
         min-width: 45px; 
-        /* margin-left: 10px; */
+        margin-left: 10px;
     }
 
     #sidebar .brand {
