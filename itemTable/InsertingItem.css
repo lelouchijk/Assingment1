@@ -466,6 +466,18 @@ form .inputFieled .quantityColorField{
     width: 200px;
 }
 
+form .inputFieled .quantityColorField .form_control{
+	display: inline-block;
+}
+
+
+
+form .inputFieled .quantityColorField select{
+	
+	width: 200px;
+	
+}
+
 /* form .inputFieled .productDescription{
     width: 500px;
     height: 300px;
@@ -473,7 +485,7 @@ form .inputFieled .quantityColorField{
 
 form .inputFieled .productDescription textarea{
     width: 900px;
-    height: 140px;
+    height: 100px;
 	overflow: hidden;
 	border: 1px solid var(--dark);
 	background-color: transparent;
