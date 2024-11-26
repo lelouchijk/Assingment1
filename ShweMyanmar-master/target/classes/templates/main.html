@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en", xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Interface</title>
+</head>
+<body>
+        <a th:href="@{/userSystem/createShop}">Create Shop</a>
+        <a th:href="@{/shopSystem/showShop}">Show Shop</a>
+        <a th:href="@{/userSystem/itemInsert}">Item Insert</a> <br>
+        <a th:href="@{/userSystem/showItem}">Item Show</a> <br>
+        <a th:href="@{/userSystem/updateUser}">Update User</a>
+
+
+        <br>
+<!--        <a th:href="@{/userSystem//addToCart/{itemId}}">View All Item</a>-->
+
+<!--        correct code about variable prasing with id-->
+        <a th:href="@{/userSystem/showAllItem}">View All Item</a>
+
+        <br><br>
+        <a th:href="@{/shopSystem/categoryIndex}">Shop Category Index</a>
+        <a th:href="@{/shopSystem/itemIndex}">Shop Item Index</a>
+
+        <a th:href="@{/LogIn/logout}">Logout</a>
+
+        <br>
+        <a th:href="@{/userSystem/createDelivery}">Create Delivery</a>
+        <br>
+
+        <a th:href="@{/userSystem/viewHistory}">View History</a>
+        <br>
+        <p th:text="${user.getFirstName()+user.getLastName()}" style="size: 500px"></p>
+
+</body>
+</html>

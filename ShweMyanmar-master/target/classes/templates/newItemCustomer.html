@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en", xmlns:th ="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Item Insert</title>
+</head>
+<body>
+<form th:action="@{/userSystem/addItem}" method="post" th:object = "${item}">
+  Enter Item Name:<input type="text" name="itemName" id="itemName" th:field = "*{itemName}"> <br>
+  Enter quantity:<input type="text" name="quantity" id="quantity" th:field = "*{quantity}"> <br>
+  Enter Price:<input type="text" name="price" id="price" th:field = "*{price}"> <br>
+
+  <br> <br>
+
+  <input type="submit" value="Add Item">
+  <input type="button" value="Cancel">
+</form>
+</body>
+</html>

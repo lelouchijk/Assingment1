@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en", xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Interface</title>
+</head>
+<body>
+<a th:href="@{/deliverySystem/assignToShop}">Register to Shop</a>
+
+
+
+<br>
+<!--        <a th:href="@{/userSystem//addToCart/{itemId}}">View All Item</a>-->
+
+
+<a th:href="@{/deliverySystem/viewDeliveryItem}">Assign Delivery Way</a>
+
+<br>
+<a th:href="@{/deliverySystem/viewOrder}">Orders</a>
+
+<br>
+<!--<a th:href="@{/shopSystem/categoryIndex}">Shop Category Index</a>-->
+<!--<a th:href="@{/shopSystem/itemIndex}">Shop Item Index</a>-->
+
+<a th:href="@{/LogIn/logout}">Logout</a>
+
+<br>
+
+<p th:text="${user.getFirstName()+user.getLastName()}" style="size: 500px"></p>
+
+
+</body>
+</html>

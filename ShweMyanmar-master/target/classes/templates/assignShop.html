@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Assign Delivery Person to Shop</title>
+</head>
+<body>
+<h1>Assign Delivery Person to a Shop</h1>
+
+<!-- Form for assigning delivery person to a shop -->
+<form th:action="@{/deliverySystem/assignToShopProcess}" method="post">
+
+    <!-- Display the logged-in user information -->
+    <p>Delivery Person: <span th:text="${user.firstName} + ' ' + ${user.lastName}"></span></p>
+
+    <!-- Dropdown for available shops -->
+    <label for="shopId">Select a Shop:</label>
+    <select name="shopId" id="shopId">
+        <option th:each="shop : ${shops}" th:value="${shop.shopId}" th:text="${shop.shopName}"></option>
+    </select>
+
+    <br> <br>
+
+    <!-- Submit and Cancel buttons -->
+    <input type="submit" value="Assign to Shop">
+    <input type="button" value="Cancel" onclick="window.location.href='/deliverySystem/index'">
+</form>
+
+</body>
+</html>
