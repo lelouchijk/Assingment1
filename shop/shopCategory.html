@@ -168,12 +168,8 @@
 	
 						<thead>
 							<tr>
-								<th>Item ID</th>
-								<th>Item Photo</th>
-								<th>Item Name</th>
-								<th>Date</th>
-								<th>Price</th>
-								<th>Quantity</th>
+								<th>Category ID</th>
+								<th>Category Name</th>
 								<th>Action</th>
 							</tr>
 						</thead>
@@ -182,11 +178,8 @@
 
 							<tr>
 								<td>1</td>
-								<td> <img src="" alt="">Sneaker Photo</td>
-								<td>AF</td>
-								<td>today date</td>
-								<td>200</td>
-								<td>100</td>
+								<td> Sneaker Photo</td>
+								
 								<td>
 									
 									<button class="editing"><i>
@@ -217,7 +210,7 @@
 					<div class="modal-content">
 		
 						<div class="modal-header">
-							<h4 class="modal-title">Fill the Form</h4>
+							<h4 class="modal-title">Adding New Category</h4>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						
@@ -227,28 +220,15 @@
 		
 							<form action="#" id="myForm">
 		
-								<div class="card imgholder">
-									<label for="imgInput" class="upload">
-										<input type="file" name="" id="imgInput">
-										<i class="bi bi-plus-circle-dotted"></i>
-									</label>
-									<img src="./image/Profile Icon.webp" alt="" width="200" height="200" class="img">
-								</div>
+								
 		
-								<div class="inputField">
+								<div class="input-field">
 									<div>
-										<label for="name">Item Name:</label>
+										<label for="name">Category Name:</label>
 										<input type="text" name="" id="name" required>
 									</div>
 									
-									<div>
-										<label for="price">Price:</label>
-										<input type="number" name="" id="price" required>
-									</div>
-									<div>
-										<label for="quantity">Quantity:</label>
-										<input type="number" name="" id="quantity" required>
-									</div>
+									
 									
 								</div>
 		
@@ -265,45 +245,7 @@
 		
 			<!--Read Data Modal-->
 			<!-- Eyes Icon  -->
-			<div class="modal fade" id="readData">
-				<div class="modal-dialog modal-dialog-centered modal-lg">
-					<div class="modal-content">
-		
-						<div class="modal-header">
-							<h4 class="modal-title">Profile</h4>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-		
-						<div class="modal-body">
-							<!-- View Eyes Icon  -->
 
-
-							<form action="#" id="myForm">
-		
-								<div class="card imgholder">
-									<img src="./image/Profile Icon.webp" alt="" width="200" height="200" class="showImg">
-								</div>
-		
-								<div class="inputField">
-									<div>
-										<label for="name">Item Name</label>
-										<input type="text" name="" id="showName" disabled>
-									</div>
-									<div>
-										<label for="price">Price</label>
-										<input type="number" name="" id="showPrice" disabled>
-									</div>
-									<div>
-										<label for="quantity">Quantity</label>
-										<input type="number" name="" id="showQuantity" disabled>
-									</div>
-								</div>
-		
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
 			</section>
 		</main>
 		<!-- MAIN -->

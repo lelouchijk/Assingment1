@@ -4,6 +4,7 @@
     <title>Hash Techie Official</title>
     <link rel="stylesheet" href="login.css">
     <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
+
 </head>
 <body>
     <!-- NAVBAR CREATION -->
@@ -104,7 +105,21 @@
     </div>
      <!-- SIGN UP FORM CREATION -->
 
-    <script src="logiin.js"></script>
+
 </body>
+<script>
+    const loginsec=document.querySelector('.login-section')
+const loginlink=document.querySelector('.login-link')
+const registerlink=document.querySelector('.register-link')
+registerlink.addEventListener('click',(e)=>{
+	e.preventDefault();
+    loginsec.classList.add('active')
+})
+loginlink.addEventListener('click',(e)=>{
+	e.preventDefault();
+    loginsec.classList.remove('active')
+})
+
+</script>
 
 </html>

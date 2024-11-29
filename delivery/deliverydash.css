@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	
 }
 
 a {
@@ -44,6 +45,7 @@ body.dark {
 body {
 	background: var(--grey);
 	overflow-x: hidden;
+	
 }
 
 
@@ -341,6 +343,41 @@ body {
 #content nav #switch-mode:checked + .switch-mode::before {
 	left: calc(100% - (25px - 4px) - 2px);
 }
+
+
+
+.sub-menu-wrap {
+    display: none;
+    position: absolute;
+    top: 56px; /* Adjust based on nav height */
+    right: 0;
+    background: var(--light);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    width: 280px; /* Adjust width as needed */
+	background-color: wheat;
+}
+
+/* Display submenu on hover (optional) */
+/* .profile:hover + .sub-menu-wrap {
+    display: block;
+} */
+
+/* Optional animation for the submenu */
+.sub-menu-wrap .sub-menu {
+    padding: 16px;
+	/* transition: 0.3ms; */
+	transition-delay: 1s;
+}
+
+/* Adjust user info styles */
+.sub-menu-wrap .user-info h2 {
+    font-size: 16px;
+    color: var(--dark);
+    text-align: center;
+}
+
 /* NAVBAR */
 
 

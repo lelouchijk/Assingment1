@@ -89,3 +89,21 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const profile = document.querySelector('.profile');
+    const subMenuWrap = document.querySelector('.sub-menu-wrap');
+
+    profile.addEventListener('click', (e) => {
+        e.preventDefault();
+        subMenuWrap.style.display = subMenuWrap.style.display === 'block' ? 'none' : 'block';
+    });
+
+
+    document.addEventListener('click', (e) => {
+        if (!profile.contains(e.target) && !subMenuWrap.contains(e.target)) {
+            subMenuWrap.style.display = 'none';
+        }
+    });
+});

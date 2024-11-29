@@ -358,6 +358,7 @@ body {
 	background-color: transparent;
 	/* border-radius: .4rem; */
 	border: none;
+	cursor: pointer;
 	/* border-radius: 100%; */
 }
 
@@ -500,13 +501,12 @@ form .inputFieled .productDescription textarea{
 }
 
 .submit{
-	display: flex;
-	justify-content: flex-end;
-	background-color: transparent;
-	margin-right: 50px;
+	
 }
 
 .submitBtn{
+	/* margin: 390px -200px; */
+	margin: 10px 900px;
 	border-radius: .4rem;
 	width: 70px;
 	height: 30px;

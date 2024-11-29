@@ -736,6 +736,7 @@ body {
 
 .modal-dialog-scrollable .modal-body {
     overflow-y: auto;
+    color: red;
 }
 
 .modal-dialog-centered {

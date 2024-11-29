@@ -1,3 +1,7 @@
+
+
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -102,6 +106,8 @@ nav ul li a{
     
     
 }
+
+
 .ppa-bar ul li a{
     
     text-decoration: none;
@@ -115,6 +121,7 @@ nav ul li a{
     
     width: 50px;
     height: 50px;
+    /* border-radius: 3rem; */
     background-color: #8bb399;
     margin-left: 5px;
     display: flex;
@@ -123,7 +130,7 @@ nav ul li a{
     margin-top: 380px;
     border: none;  
     position: fixed;
-    border-radius: 5px; 
+    border-radius: 5rem; 
     top: 140px;
     left: 10px;
     z-index: 1001;
@@ -159,22 +166,22 @@ nav ul li a{
 .grid-layout-recent{
     display: grid;
     grid-template-columns: repeat(6,1fr);
-    gap: 30px;
     list-style-type: none;
     margin: 20px;
-    max-width: 100%;
     gap: 10px;
-    height: 246px;   
-    margin-top: -40px;
+    height: 200px;   
+    /* margin-top: -40px; */
 
     
 }
 .grid-layout-recent li{ 
     background-color: rgba(255, 255, 255, 0.1);
-    
     border-radius: 5px;
     gap: 30px;
     margin-top: 40px;
+    width: 100%;
+    height: 107px;
+    /* margin-top: -20px; */
     
     
 }
@@ -200,98 +207,133 @@ nav ul li a{
 }
 
 
-
-.footer-grid{
-    grid-template-columns: auto auto auto auto auto auto;
+footer{
     background-color: white;
 }
 
-.footer-icon{
-    /* display: flex; */
-    /* gap: 30px; */
-}
-.i-facebook{
-    color: rgb(5, 24, 0);
-    background-color: transparent;
-    opacity: 0.3;
-}
-.i-facebook:hover{
-    opacity: 1;
-}
-.i-x{
-    color: rgb(5, 24, 0);
-    background-color: transparent;
-    opacity: 0.3;
-}
-.i-x:hover{
-  
-    opacity: 1;
-}
-.i-tiktok{
-    color: rgb(5, 24, 0);
-    background-color: transparent;
-    opacity: 0.3;
-}
-.i-tiktok:hover{
-  
-    opacity: 1;
-}
-.footer-term{
-    font-size: 14px;
-    display: flex;
-    color: rgb(5, 24, 0);
-    background-color: white;
-    padding: 10px 0px;
-    
-}
-.footer-term a{
-    text-decoration: none;
-    display: inline;
-    color: rgb(5, 24, 0);
-    opacity: 0.3;
-    transition: 0.1s;
-    padding: 0 10px;
-    
-    
-}
-.footer-term-items{
-    margin-left: 1000px ;
-}
-.parent > .child1,
-        .parent > .child2{
-            margin-left: 1030px;
-            margin-bottom: 5px;
-            font-size: 15px;
-        }
-.footer-term a:hover{
-    opacity: 1;
-}
-.copyright-div{
-    background-color: white;
-}
-.copyright {
-    margin-bottom: auto ;
-    margin-left: 1020px;
-    /* margin-top: 10px; */
-    font-size: 15px;
-    padding: 0px 0px ;
-}
-.footer-grid{
-    display: grid;
-   
+.footer-tags{
+    width: 80%;
+    margin: auto;
 }
 
+.footer-tags h2{
+    color: red;
+    padding: 20px 2px;
+}
 
-.footer-grid ul li a {
+.footer-ul ul li{
+    list-style-type: none;
+    font : 13px "Monaco",Monospace;
+    padding: 3px;
+}
+
+.footer-ul ul li:first-child{
+    font : bold 15px "Monaco",Monospace;
+}
+
+.footer-tags ul li a{
     text-decoration: none;
     color: black;
     
-    
+}
+
+.footer-ul{
+    display: grid;
+    row-gap: 30px;
+    column-gap: 20px;
+    grid-template-columns: auto auto auto auto;
+   
+}
+
+.top-compo{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.button-inner-div{
+    padding: 20px 20px;
+}
+
+.button-inner-div button{
+    background-color: white;
+    border: 1px solid black;
+    width: 180px;
+    height: 30px;
+    border-radius: 0.6rem;
     
 }
 
-.footer-grid ul li{
+.redirect-icons{
+    padding: 30px;
+}
+
+
+.iconss{
+    margin-left: 120px;
+}
+
+
+.redirect-icons ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px 8px;
+}
+
+.redirect-icons ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.redirect-icons ul li a:hover{
+    color: green;
+}
+
+.footer-term{
+    padding-top: 28px;
     
-    list-style: none;
-    padding: 30px auto;
+}
+
+.footer-term-items{
+    margin-left: 200px;
+    
+}
+
+.footer-term-items a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 10px;
+    opacity: 0.4;
+    font-size: 13px;
+}
+
+.footer-term-items a:hover{
+    opacity: 1;
+}
+
+
+.language-ll{
+    text-align: center;
+    
+
+}
+
+.language-ll ul{
+    display: inline-block;
+    text-align: left;
+}
+
+.language-ll ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0px 30px 10px 15px;
+
+}
+
+.language-ll ul li a {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.language-ll ul li a:hover {
+    opacity: 1;
 }
