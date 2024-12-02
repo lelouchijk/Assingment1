@@ -1,7 +1,4 @@
 
-
-
-
 * {
     margin: 0px;
     padding: 0px;
@@ -21,7 +18,8 @@ li {
 :root {
 	--poppins: 'Poppins', sans-serif;
 	--lato: 'Lato', sans-serif;
-
+    --primary : #000000;
+    --secondary : whitesmoke;
 	--light: #F9F9F9;
 	--black: #000000;
 	--light-blue: #CFE8FF;
@@ -38,11 +36,11 @@ li {
 
 
 body{
-    background-color: rgb(5, 24, 0);
+    background-color: var(--secondary);
 }
 
 nav{
-    background-color: rgb(5, 24, 0);
+    background-color: var(--secondary);
     position: fixed;
     width: 100%;
     height: 80px;
@@ -73,7 +71,7 @@ nav{
 nav ul li a{
     
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--primary);
     justify-content: center;
 }
 .searchBar {
@@ -92,23 +90,23 @@ nav ul li a{
 }
 .exchange{
     margin-left: 50px;
-    color: whitesmoke;
+    color: var(--primary);
     
 }
 .code-scan{
     margin-left: 50px;
-    color: whitesmoke;
+    color: var(--primary);
 }
 .chat{
     margin-left:50px;
-    color: whitesmoke;
+    color: var(--primary);
 }
 
 
 .ppa-default-bar{
     width: 100%;
     
-    background-color: rgb(10, 46, 0);
+    background-color: var(--primary);
     position: fixed;
     top: 80px;
     display: flex;
@@ -139,19 +137,18 @@ nav ul li a{
 .ppa-bar ul li a{
     
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--secondary);
 }
 
 .ads-img{
-    display: block;
-    margin: 130px auto;
+    width: 90%;
+    margin: 130px auto auto 60px;
 }
 
 .theme-change{
     
     width: 50px;
     height: 50px;
-    /* border-radius: 3rem; */
     background-color: #8bb399;
     margin-left: 5px;
     display: flex;
@@ -172,49 +169,31 @@ nav ul li a{
 
 .grid-recent-layout{
     
-    width: 100%;
+    /* width: 90%; */
     padding: 20px;
-    
-    margin: -130px auto;
+    margin: auto;
+
     
     
 }
 
 .recent-view{
     background-color: transparent;
-    color: whitesmoke;
+    color: var(--primary);
     margin-bottom: 20px;
     
-
 }
 
 .recent-view a{
     background-color: transparent;
-    color: #a5cfb3;
+    color: var(--primary);
     font-size: 15px;
     text-decoration: none;
     margin-left: 1000px;
+   
 }
 
-/* .grid-layout-recent{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    list-style-type: none;
-    margin: 20px;
-    gap: 10px;
-    
-    margin-top: -40px;
-}
 
-.grid-layout-recent li{ 
-    background-color: rgba(255, 255, 255, 0.1);  
-    width: 100%;
-    border-radius: 5px;
-    gap: 30px;
-    margin-top: 40px;
-    height: 107px;
-    margin-top: -20px; 
-} */
 
 .grid-layout-recent{
     display: grid;
@@ -246,12 +225,13 @@ nav ul li a{
 .item-info{
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 .item-name p{
     text-align: center;
     font-size: 16px;
-    color: var(--white-smoke);
+    color: var(--primary);
 }
 
 .lowest-price{
@@ -259,7 +239,7 @@ nav ul li a{
 }
 
 .lowest-price p{
-    color: var(--white-smoke);
+    color: var(--primary);
     font-size: 13px;
 }
 
@@ -275,7 +255,13 @@ nav ul li a{
 .last-sale span{
     text-align: center;
     color: var(--white-smoke);
-    border-radius: 0.2rem;
+    /* border-radius: 0.2rem; */
+}
+
+.span-ss{
+    background-color: var(--dark);
+    padding: 2px 7px;
+    border-radius: 0.3rem;
 }
 
 .add-cart{
@@ -291,33 +277,27 @@ nav ul li a{
     border: none;
 }
 
-
-
-
-
-.recommend-product-layout{
+/* .recommend-product-layout{
     width: 98%;
     height: 294px;
     background-color: whitesmoke;
-    margin: 140px auto; /*140px is top bottom/ auto is left right */
-    
-    
+    margin: 140px auto; 
+
 }
 .grid-layout-recommend{
     display: grid;
     grid-template-rows: repeat(6,1fr);
     list-style: none;
-    /* border-radius: 10px; */
     border-color: black;
 }
 .recommend-layout-recommend li{
     background-color: black;
     border-radius: 5px;
-}
+} */
 
 
 footer{
-    background-color: white;
+    background-color: var(--dark-grey);
 }
 
 .footer-tags{
@@ -367,7 +347,7 @@ footer{
 
 .button-inner-div button{
     background-color: white;
-    border: 1px solid black;
+    border: 1px solid transparent;
     width: 180px;
     height: 30px;
     border-radius: 0.6rem;
