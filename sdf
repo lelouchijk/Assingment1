@@ -1,0 +1,143 @@
+    @Transactional
+    public void saveItem(Item i) {
+            itemRepo.save(i);
+    }
+
+
+    @Transactional
+    public void updateItem(long id,Item item){
+        item.setItemId(id);
+        itemRepo.save(item);
+    }
+
+    public void deleteItem(long id) {
+        itemRepo.deleteById(id);
+    }
+
+    public List<Item> showAllItem(){
+        return itemRepo.findAll();
+    }
+
+    public void saveCategory(Category c) {
+        categoryRepo.save(c);
+    }
+
+
+    public void updateCategory(long id,Category c) {
+        Category existingCategory = categoryRepo.findById(id).get();
+        c.setCategoryId(id);
+        c.setShop(existingCategory.getShop());
+        categoryRepo.save(c);
+
+    }
+
+    public void deleteCategory(long id) {
+        categoryRepo.deleteById(id);
+    }
+
+
+    public void registerDelivery(Delivery delivery){
+        delivery.setApproval(false);
+        deliveryRepo.save(delivery);
+    }
+
+    @Transactional
+    public void markAsDelivered(Long orderId, Long deliveryPersonId) {
+        System.out.println("Fetching order with ID: " + orderId);
+        Order order = orderRepo.findById(orderId).orElseThrow(() -> new IllegalArgumentException("Order with ID " + orderId + " not found"));
+        Delivery deliveryPerson = deliveryRepo.findById(deliveryPersonId).orElseThrow(() -> new IllegalArgumentException("Delivery person with ID " + deliveryPersonId + " not found"));
+        order.setStatus("Delivered");
+        deliveryPerson.setStatus("Free");
+
+        orderRepo.save(order);
+        deliveryRepo.save(deliveryPerson);
+    }
+
+
+    public List<Delivery> findDeliveryByStatus(String status) {
+        return deliveryRepo.findByStatus(status);
+    }
+
+    @Transactional
+    public void registerToShop(long deliveryPersonId,Shop shop) {
+
+        Delivery deliveryPerson = deliveryRepo.findById(deliveryPersonId)
+                .orElseThrow(() -> new EntityNotFoundException("Delivery person not found"));
+        deliveryPerson.setDeliveryId(deliveryPersonId);
+        deliveryPerson.setShop(shop);
+
+        deliveryRepo.save(deliveryPerson);
+    }
+
+    @Transactional
+    public void declineOrder(long orderId,long deliveryId){
+        Order order = orderRepo.findById(orderId).get();
+        order.setStatus("Pending");
+        order.setDelivery(null);
+
+    }
+
+    public void createShop(Shop shop){
+        
+        shop.setVerify(false);
+        shopRepo.save(shop);
+    }
+
+
+
+    public void deleteShop(long id){
+        Shop existingShop = shopRepo.findById(id).orElseThrow(()-> new EntityNotFoundException("Shop not found"));
+        Role customerRole = roleRepo.findByRoleName("Customer");
+        existingShop.getShopOwner().setRole(customerRole);
+        shopRepo.deleteById(id);
+    }
+
+    public Shop getShop(long id){
+        return shopRepo.findById(id).orElse(null);
+    }
+
+    @Transactional
+    public void confirmDeliveryPerson(Long deliveryPersonId) {
+        Delivery deliveryPerson = deliveryRepo.findById(deliveryPersonId)
+                .orElseThrow(() -> new EntityNotFoundException("Delivery person not found"));
+        deliveryPerson.setVerifyByShop(true);
+        deliveryRepo.save(deliveryPerson);
+    }
+
+    public User getUser(long id) {
+        return userRepo.findById(id).get();
+    }
+
+    public List<CartItem> getAllCartItemsByUser(User loggedInUser) {
+        return cartItemRepo.findByUser(loggedInUser);
+
+    }
+
+        public void setOrder(User loggedInUser) {
+        List<Cart> cartlist = cartRepo.findByUser(loggedInUser);
+        Order order = new Order();
+        Shop shop = null;
+        for(Cart cart:cartlist){
+            order.setTotal(cart.getTotal());
+            order.setQuantity(cart.getQuantity());
+            if (!cart.getCartItems().isEmpty()) {
+                CartItem firstCartItem = cart.getCartItems().get(0);
+                if (firstCartItem.getItem() != null) {
+                    shop = firstCartItem.getItem().getShop();
+                }
+            }
+        }
+        if(shop!=null){
+            order.setShop(shop);
+        }
+
+        order.setUser(loggedInUser);
+        order.setStatus("Pending");
+
+        orderRepo.save(order);
+    }
+
+    public List<Order> getAllOrdersLoggedUser(User loggedUser) {
+        return orderRepo.findOrdersByUser(loggedUser);
+    }
+
