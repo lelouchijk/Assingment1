@@ -184,9 +184,6 @@ nav ul li a{
 
 }
 
-.sidebar{
-    
-}
 
 .sec-sidebar{
     /* background-color: black; */
@@ -197,21 +194,25 @@ nav ul li a{
 
 .sidebar-element{
     border: var(--primary);
-    padding: 5px 0px;
+    /* padding: 10px 0; */
 }
 
-.element-button{
-    width: 100%;    
+.sidebar-element hr{
+    color: var(--dark);
 }
+
+
 
 .element-name{
     display: flex;
 }
 
 .element-button{
+    width: 100%;   
     border: none;
     background-color: var(--secondary);
     cursor: pointer;
+    padding: 15px 0px;
 }
 
 .element-button p{
@@ -219,6 +220,15 @@ nav ul li a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
+.outter-div-child-element {
+    display: none;
+    transition: all 1s ease-in-out;
+}
+
+.outter-div-child-element.active {
+    display: block;
+}
 
 
 .element-button svg{
@@ -257,6 +267,7 @@ nav ul li a{
 .item-box{
     background-color: black;
     height: 107px;
+    border-radius: 0.6rem;
 }
 
 .item-info{

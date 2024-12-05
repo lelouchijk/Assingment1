@@ -220,6 +220,7 @@ nav ul li a{
 .item-box{
     background-color: black;
     height: 107px;
+    border-radius: 0.6rem;
 }
 
 .item-info{
