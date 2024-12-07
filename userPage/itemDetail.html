@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Project</title>
+
+
+    <link rel="stylesheet" href="itemDetail.css" />
+
+
+
+</head>
+
+<body>
+    <nav class="my-nav">
+        <input type="text" class="searchBar" placeholder="Search with Name">
+        <a href="#sport">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="exchange"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 5a5 5 0 0 0 4.027 4.905 6.5 6.5 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05q-.001-.07.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.5 3.5 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98q-.004.07-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5m16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0m-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674z" />
+            </svg>
+            <!-- <span>Leeebl</span> -->
+        </a>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="code-scan"
+                viewBox="0 0 16 16">
+                <path
+                    d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5M.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5m15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5M4 4h1v1H4z" />
+                <path d="M7 2H2v5h5zM3 3h3v3H3zm2 8H4v1h1z" />
+                <path d="M7 9H2v5h5zm-4 1h3v3H3zm8-6h1v1h-1z" />
+                <path
+                    d="M9 2h5v5H9zm1 1v3h3V3zM8 8v2h1v1H8v1h2v-2h1v2h1v-1h2v-1h-3V8zm2 2H9V9h1zm4 2h-1v1h-2v1h3zm-4 2v-1H8v1z" />
+                <path d="M12 9h2V8h-2z" />
+            </svg>
+        </a>
+        <a href="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="chat"
+                viewBox="0 0 16 16">
+                <path
+                    d="M2.678 11.894a1 1 0 0 1 .287.801 11 11 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8 8 0 0 0 8 14c3.996 0 7-2.807 7-6s-3.004-6-7-6-7 2.808-7 6c0 1.468.617 2.83 1.678 3.894m-.493 3.905a22 22 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a10 10 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105" />
+            </svg>
+        </a>
+        <ul>
+            <li><a href="">Login</a></li>
+            <li><a href="">Sign Up</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="ppa-default-bar">
+        <div class="ppa-bar">
+            <ul>
+                <li><a href="">New</a></li>
+                <li><a href="">Brands</a></li>
+                <li><a href="">Item</a></li>
+                <li><a href="">Category</a></li>
+                <li><a href="">Setting</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <button class="theme-change">
+        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="30" fill="currentColor" class="brightness-high-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708" />
+        </svg>
+    </button>
+
+
+    <main>
+        <div class="main-div">
+            <section class="item-show-section">
+                <div class="item">
+                    <div class="item-name">
+                         <div class="item-name-outter">
+                            <div class="item-name-inner">
+                                <h1 class="name">Jordan 4</h1>
+                                <span class="name-specific">Bar nyr</span>
+                            </div>
+                         </div>
+                    </div>
+
+                    <div class="itemImage">
+                        <div class="itemImage-outter">
+                            <div class="itemImage-inner">
+                                <div class="singleImage">
+                                    <div class="singleImage-outter">
+                                        <div class="singleImage-inner">
+                                            <img src="" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="aboutItem-outter">
+                        <div class="aboutItem-inner">
+                            <div class="size">
+                                <button>
+                                    <span>
+                                        <div class="size-container">
+                                            <p>Size:</p>
+                                            <div class="All-container">
+                                                <p>All</p>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </button>
+                            </div>
+
+                            <div class="buy-div">
+                                <div class="buy-outter-div">
+                                    <div class="buy-inner-div">
+                                        <p>There are no Asks at this time but you can still place a Bid and wait for a new seller to match your price</p>
+                                        <div class="past-sold">
+                                            <img src="" alt="">
+                                            <h2>3 sold in Last 3 Days</h2>
+                                        </div>
+                                    </div>
+                                    <div class="buy-button-div">
+                                        <div class="buy-button">
+                                            <a href=""></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="heading">
+                        <div class="fav-div">
+                            <div class="fav">
+                                <ul>
+                                    <li>
+                                        <button>
+                                            svg htate
+                                        </button>
+
+                                    </li>
+                                    <li>
+                                        <button>
+                                            svg fav icon
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button>
+                                            svg smt icon
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="product-description-section">
+                <hr>
+                <h3>Product Detail</h3>
+                <div class="product-description">
+                    <div class="product-description-outter">
+                        <div class="product-description-inner">
+                            ::before
+                            <div class="product-description-grid-outter">
+                                <div class="product-description-grid">
+                                    <div class="right-product-div">
+                                        <div class="product-line">
+                                            <div class="product-detail">
+                                                <span>Style</span>
+                                                <p>Style Name</p>
+                                            </div>
+                                            <div class="product-detail">
+                                                <span>Colorway</span>
+                                                <p>Colorway Name</p>
+                                            </div>
+                                            <div class="product-detail">
+                                                <span>Retail Price</span>
+                                                <p>Price</p>
+                                            </div>
+                                            <div class="product-detail">
+                                                <span>Release Date</span>
+                                                <p>Style Name</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="left-product-div">
+                                        <div class="product-description">
+                                            <h2>Prodcut Description</h2>
+                                            <p>
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure officia ea veniam possimus eius dignissimos pariatur voluptate itaque fuga impedit hic obcaecati, expedita est molestiae? Similique veritatis nemo quibusdam repellendus!
+                                                <br><br>
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil accusamus incidunt deleniti quo tempore, labore ratione magni excepturi nesciunt rem error obcaecati iste corrupti dolore, nulla itaque et earum assumenda.
+                                                <br><br>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas fuga architecto earum modi ratione excepturi molestias illo? Unde voluptate perferendis fugit odit officia nemo maxime dolores rerum possimus, deserunt dolore.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-tags">
+            <h2>Access Now </h2>
+            <div class="footer-ul">
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">How it work</a></li>
+                    <li><a href="">Verification</a></li>
+                    <li><a href="">Newsroom</a></li>
+                    <li><a href="">Carrers</a></li>
+                    <li><a href="">Reviews</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Help</a></li>
+                    <li><a href="">Help Center</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Product suggestions</a></li>
+                    <li><a href="">Size guide</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Sell</a></li>
+                    <li><a href="">Sell Guide</a></li>
+                    <li><a href="">Professional Tools</a></li>
+                    <li><a href="">Developers</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Popular Brand</a></li>
+                    <li><a href="">Nike</a></li>
+                    <li><a href="">Adidas</a></li>
+                    <li><a href="">Crocs</a></li>
+                </ul>
+                <ul>
+                    <li><a href="">Apperal</a></li>
+                    <li><a href="">Denim Tears</a></li>
+                    <li><a href="">Fear of God Essentials</a></li>
+                    <li><a href="">Nike apperal</a></li>
+                    <li><a href="">Supreme</a></li>
+                    <li><a href="">Travis Scott</a></li>
+                    <li><a href="">Yeezy</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="">Accessries</a></li>
+                    <li><a href="">Swatch X Omega</a></li>
+                    <li><a href="">Designer Sunglasses</a></li>
+                    <li><a href="">Stanley</a></li>
+                    <li><a href="">Louis Vuitton Accessories</a></li>
+                    <li><a href="">Gucci Accessories</a></li>
+                    <li><a href="">Supreme Accessories</a></li>
+                </ul>
+
+            </div>
+
+            <div class="footer-last">
+                <div class="top-compo">
+                    <div class="button-div">
+                        <div class="button-inner-div">
+                            <button class="footer-button" type="button">
+                                <span>Region</span>
+                                <span>|</span>
+                                <span>English</span>
+                                <span>|</span>
+                                <span>$USD</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="redirect-icons">
+                        <div class="iconss">
+                            <ul>
+                                <li><a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                        </svg>
+                                    </a></li>
+                                <li><a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                                            <path
+                                                d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+                                        </svg>
+                                    </a></li>
+                                <li><a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                                        </svg>
+                                    </a></li>
+                                <li><a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09" />
+                                        </svg>
+                                    </a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-term">
+                        <div class="footer-term-items">
+                            <a href="">Term</a>
+                            <a href="">Policy</a>
+                            <a href="">Your Privacy Choices</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="language-ll">
+                    <ul>
+                        <li><a href="">English (US) </a></li>
+                        <li><a href=""> English (UK) </a></li>
+                        <li> <a href="">简体中文 </a></li>
+                        <li> <a href="">日本語 </a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+    <script src="itemDetail.js"></script>
+
+</body>
+
+</html>
