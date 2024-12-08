@@ -75,7 +75,6 @@ public class LoginController {
 
     @PostMapping("/registerProcess")
     public String registerUser(@ModelAttribute("user")User user){
-//        return (logInSer.saveUser(user))? "main" : "register";
         user.setDate(LocalDate.now());
         logInSer.saveUser(user);
         return "redirect:/LogIn/index";

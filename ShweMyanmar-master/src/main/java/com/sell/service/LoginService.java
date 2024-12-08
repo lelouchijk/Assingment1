@@ -21,26 +21,8 @@ public class LoginService {
     @Autowired
     private BCryptPasswordEncoder passEncode;
 
-//    public Boolean saveUser(User user){
-//        User existingUser = userRepo.findByEmail(user.getEmail());
-//            if(existingUser == null){
-//                user.setPassword(passEncode.encode(user.getPassword()));
-//                if(roleRepo.findByRoleName("Admin")==null) {
-//                    Role adminRole = roleRepo.findByRoleName("Admin");
-//                    user.setRole(adminRole);
-//                }
-//                else {
-//                    Role userRole = roleRepo.findByRoleName("Customer");
-//                    user.setRole(userRole);
-//                }
-//
-//
-//            userRepo.save(user);
-//            return true;
-//        }
-//        return false;
-//    }
 
+    // Business Logic
 
     public Boolean saveUser(User user) {
         User existingUser = userRepo.findByEmail(user.getEmail());
@@ -91,7 +73,6 @@ public class LoginService {
             if(passEncode.matches(pw,user.getPassword())){
                 return user;
             }
-
         }
         return null;
     }

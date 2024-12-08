@@ -13,22 +13,21 @@ import java.util.Optional;
 
 @Service
 public class ShopService  {
-
     private final ShopRepository shopRepo;
-
     private final UserRepository userRepo;
-
     private final CategoryRepository categoryRepo;
-
     private final ItemRepository itemRepo;
-
     private final RoleRepository roleRepo;
-
     private final DeliveryRepository deliveryRepo;
-
     private final OrderRepository orderRepo;
-
     private final UserService userSer;
+
+
+    //Business Logic
+
+
+
+
     @Autowired
     public ShopService(ShopRepository shopRepo, UserRepository userRepo, CategoryRepository categoryRepo, ItemRepository itemRepo, RoleRepository roleRepo, DeliveryRepository deliveryRepo, OrderRepository orderRepo, UserService userSer) {
         this.shopRepo = shopRepo;

@@ -11,22 +11,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
 @Service
 public class DeliveryService {
-
     private final DeliveryRepository deliveryRepo;
-
     private final UserRepository userRepo;
-
     private final ItemRepository itemRepo;
-
     private final RoleRepository roleRepo;
-
     private final OrderRepository orderRepo;
-
     private final ShopRepository shopRepo;
-
     public DeliveryService(DeliveryRepository deliveryRepo, UserRepository userRepo, ItemRepository itemRepo,
                            RoleRepository roleRepo, OrderRepository orderRepo, ShopRepository shopRepo) {
         this.deliveryRepo = deliveryRepo;
@@ -36,7 +28,7 @@ public class DeliveryService {
         this.orderRepo = orderRepo;
         this.shopRepo = shopRepo;
     }
-
+    /// Business Logic
 
     public void registerDelivery(Delivery delivery){
         delivery.setApproval(false);

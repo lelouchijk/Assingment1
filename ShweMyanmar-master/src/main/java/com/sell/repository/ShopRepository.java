@@ -15,16 +15,10 @@ import java.util.Optional;
 public interface ShopRepository extends JpaRepository<Shop,Long> {
     List<Shop> findByShopName(String shopName);
     List<Shop> findByVerifyFalse();
-//    List<Shop> findByShopOwner(User shopOwner);
-
     @Query("SELECT s.shopId FROM Shop s WHERE s.shopOwner.userId = :ownerId")
     List<Long> findShopIdsByOwnerId(@Param("ownerId") Long ownerId);
-
     List<Shop> findByStatus(String status);
-
     List<Shop>findShopByShopId(long id);
-
     Optional<Shop> findByShopOwner(User user);
-
     Optional<Shop> findShopByItems(Item item);
 }

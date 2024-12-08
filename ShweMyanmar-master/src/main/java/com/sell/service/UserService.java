@@ -13,17 +13,11 @@ import java.util.*;
 @Service
 public class UserService {
     private final UserRepository userRepo;
-
     private final ShopRepository shopRepo;
-
     private final ItemRepository itemRepo;
-
     private final CartRepository cartRepo;
-
     private final OrderRepository orderRepo;
-
     private final CategoryRepository categoryRepo;
-
     private final CartItemRepository cartItemRepo;
 
     @Autowired

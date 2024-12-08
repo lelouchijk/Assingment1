@@ -176,25 +176,10 @@ public class AdminController {
 
     }
 
-//    @GetMapping("/showItem")
-//    public String itemShowPage(Model model) {
-//        model.addAttribute("itemList",adminSer.showAllItem());
-//        return "showItem";
-//
-//    }
 
     @GetMapping("/showItem")
     public String itemShowPage(Model model) {
         List<Item> items = adminSer.showAllItem();
-//        List<itemDTO> itemDTOs = items.stream().map(item -> {
-//            itemDTO dto = new itemDTO();
-//            dto.setItemName(item.getItemName());
-//            dto.setPrice(item.getPrice());
-//            dto.setQuantity(item.getQuantity());
-//            dto.setItemImage(item.getItemImage()); // Set byte[] directly
-//            return dto;
-//        }).collect(Collectors.toList());
-
         model.addAttribute("itemList", items);
         return "showItem";
     }

@@ -28,21 +28,12 @@ import java.util.Optional;
 public class DeliveryController {
 
     private final DeliveryService deliverySer;
-
     private final UserService userSer;
-
     private final ShopService shopSer;
-
     private final ShopRepository shopRepo;
-
     private final UserRepository userRepo;
-
     private final DeliveryRepository deliveryRepo;
-
     private final OrderRepository orderRepo;
-
-//    private final OrderService
-
     @Autowired
     public DeliveryController(DeliveryService deliverySer, UserService userSer, ShopService shopSer, ShopRepository shopRepo, UserRepository userRepo, DeliveryRepository deliveryRepo, OrderRepository orderRepo) {
         this.deliverySer = deliverySer;

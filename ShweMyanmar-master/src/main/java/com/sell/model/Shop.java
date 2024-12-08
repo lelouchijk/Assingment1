@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-
 public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,12 +19,6 @@ public class Shop {
     private String status;
 
     private LocalDate date;
-
-
-//  this method seen legit because each shop have many delivery
-//    @OneToMany
-//    @JoinColumn(name = "shop")
-//    private List<Delivery> deliveryPerson = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "userId")

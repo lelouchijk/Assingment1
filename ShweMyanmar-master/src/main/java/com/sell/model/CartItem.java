@@ -13,10 +13,6 @@ public class CartItem {
 
     private String itemName;
 
-//    @OneToMany
-//    private List<Item> item;
-
-    // Try Many to One Logic
     @ManyToOne
     @JoinColumn(name = "itemId")
     private Item item;

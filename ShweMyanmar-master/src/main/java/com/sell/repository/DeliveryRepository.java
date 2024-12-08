@@ -16,22 +16,12 @@ public interface DeliveryRepository extends JpaRepository<Delivery,Long> {
     List<Delivery> findByStatus(String status);
     Optional<Delivery> findByDeliveryPerson(User user);
 
-//    Optional<Delivery> findByUserId(Long userId);
-
-
-//    @Query("SELECT d FROM Delivery d JOIN d.deliveryPerson u where u.userId = :userId")
     @Query("SELECT d FROM Delivery d WHERE d.deliveryPerson.userId = :userId")
     Optional<Delivery> findByUserId(@Param("userId") Long userId);
-
 
     @Query("SELECT d FROM Delivery d JOIN d.shop s WHERE s.shopId = :shopId AND d.verifyByShop = false")
     List<Delivery> findByShopsAndVerifyByShopFalse(@Param("shopId") Long shopId);
 
-//    List<Delivery> findDeliveryByShop(long shopId);
-
     List<Delivery> findByShop(Shop shop);
-
-//    List<Delivery> findDeliveriesByVerifyByShop(Boolean b);
-//    List<Delivery> findDeliveriesByVerifyByShopAnd
 
 }

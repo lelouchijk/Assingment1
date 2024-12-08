@@ -14,21 +14,15 @@ import java.util.Optional;
 
 @Service
 public class AdminService {
-
     private final CategoryRepository categoryRepo;
     private final ItemRepository itemRepo;
     private final RoleRepository roleRepo;
     private final UserRepository userRepo;
     private final ShopRepository shopRepo;
     private final DeliveryRepository deliveryRepo;
-    private final BCryptPasswordEncoder passEnd;
-
-
     @Autowired
-    public AdminService(BCryptPasswordEncoder passEnd,
-                        CategoryRepository categoryRepo, ItemRepository itemRepo,
+    public AdminService(CategoryRepository categoryRepo, ItemRepository itemRepo,
                         RoleRepository roleRepo, UserRepository userRepo, ShopRepository shopRepo, DeliveryRepository deliveryRepo) {
-        this.passEnd = passEnd;
         this.categoryRepo = categoryRepo;
         this.itemRepo = itemRepo;
         this.roleRepo = roleRepo;
@@ -36,7 +30,7 @@ public class AdminService {
         this.shopRepo = shopRepo;
         this.deliveryRepo = deliveryRepo;
     }
-
+    //// Business Logic
 
     @Transactional
     public void saveItem(Item i) {

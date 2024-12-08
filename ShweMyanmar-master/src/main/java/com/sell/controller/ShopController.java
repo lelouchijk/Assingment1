@@ -331,9 +331,7 @@ public class ShopController {
 
     @PostMapping("/rejectDeliveryPerson/{deliveryId}")
     public String rejectDeliveryPerson(@PathVariable("deliveryId") long deliveryId){
-
         Delivery deliveryPerson = deliveryRepo.findById(deliveryId).get();
-//        Shop shop = shopRepo.findById(shopId).get();
         deliveryPerson.setShop(null);
 
         return "redirect:/shopSystem/pendingDeliveries";

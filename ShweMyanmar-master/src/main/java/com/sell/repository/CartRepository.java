@@ -11,18 +11,10 @@ import java.util.Optional;
 
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Long> {
-//    List<User>findByUserId(long userId);
     List<Cart> findByUser_UserId(long userId);
-
     void deleteByUser_UserId(long userId);
-
-//    List<Cart> findByUser(User user);
-
-
     @Transactional
     void deleteByUser(User user);
-
     List<Cart> findByUser(User user);
 
-//    List<Cart> getCartBy
 }

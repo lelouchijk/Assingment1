@@ -120,30 +120,13 @@ public class UserController {
     public String updateItem(@PathVariable("id") long id,HttpSession session,Model model){
         User loggedUser = (User) session.getAttribute("loggedUser");
         Optional<Item> existingItem = userSer.getItem(id);
-//        if( existingItem!=null & existingItem.getUser().getUserId() == loggedUser.getUserId()){
             model.addAttribute("item",userSer.getItem(id));
             model.addAttribute("categoryList",userSer.getAllCategory());
             return "updateItemCustomer";
-//        }else{
-//            model.addAttribute("errorMessage", "Unauthorized access or shop does not exist.");
-//            return "redirect:/userSystem/index";
-//        }
+
     }
 
-//    @PostMapping("/updateItemProcess/{id}")
-//    public String updateItemProcess(@PathVariable("id")long id, @ModelAttribute("item") Item item,
-//                                    @ModelAttribute("category")Category category,HttpSession session,Model model){
-//        User loggedUser = (User) session.getAttribute("loggedUser");
-//        Item existingItem = userSer.getItem(id);
-//        if( existingItem!=null & existingItem.getUser().getUserId() == loggedUser.getUserId()){
-//            userSer.updateItem(id, item, category,loggedUser);
-//            model.addAttribute("itemList",userSer.getItemsByUser(loggedUser));
-//            return "showItemCustomer";
-//        }else{
-//            model.addAttribute("errorMessage", "Unauthorized access or shop does not exist.");
-//            return "redirect:/userSystem/index";
-//        }
-//    }
+
 
     @PostMapping("/updateItemProcess/{id}")
     public String updateItemProcess(@PathVariable("id")long id, @ModelAttribute("item") Item item,
@@ -160,18 +143,13 @@ public class UserController {
     public String deleteItem(@PathVariable("id") long id, Model model, HttpSession session){
         User loggedUser = (User) session.getAttribute("loggedUser");
         Optional<Item> existingItem = userSer.getItem(id);
-//        if( existingItem!=null && existingItem.getUser().getUserId() == loggedUser.getUserId()){
             userSer.deleteItem(id);
-//        }else{
-//            model.addAttribute("errorMessage", "Unauthorized access or shop does not exist.");
-//        }
         return "redirect:/userSystem/index";
     }
 
     @GetMapping("/showItem")
     public String showItemPage(Model model, HttpSession session){
         User loggedInUser = (User) session.getAttribute("loggedUser");
-
         List<Item> itemList = userSer.getItemsByUser(loggedInUser);
         model.addAttribute("itemList",itemList);
         return "showItemCustomer";
@@ -182,12 +160,10 @@ public class UserController {
         User loggedInUser = (User) session.getAttribute("loggedUser");
         long id =  loggedInUser.getUserId();
         User existingUser = userSer.getUser(id);
-
         if(existingUser!=null && existingUser.getUserId() == loggedInUser.getUserId()){
             model.addAttribute("user",userSer.getUser(id));
             return "updateUser";
         }else{
-//            model.addAttribute("errorMessage", "Unauthorized access or shop does not exist.");
             return "redirect:/userSystem/index";
         }
     }
@@ -221,19 +197,6 @@ public class UserController {
             return "redirect:/userSystem/index";
         }
     }
-//@GetMapping("/deleteUser/{id}")
-//public String deleteUser(@PathVariable("id")long id,Model model,HttpSession session){
-//    User loggedUser = (User) session.getAttribute("loggedUser");
-//    User existingUser = userSer.getUser(id);
-//
-//    if(existingUser !=null && existingUser.getUserId()==loggedUser.getUserId()){
-//        userSer.deleteUser(id);
-//        return "redirect:/userSystem/updateUser";
-//    }else{
-//        return "redirect:/userSystem/index";
-//    }
-//}
-
 
     @GetMapping("/showAllItem")
     public String showAllItemPage(Model model, HttpSession session) {
@@ -283,33 +246,12 @@ public class UserController {
         return "viewCartItem";
     }
 
-
     @PostMapping("/removeFromCart")
     public String removeFromCart(@RequestParam("itemId") long itemId, HttpSession session) {
         User loggedInUser = (User) session.getAttribute("loggedUser");
         userSer.deleteCart(loggedInUser.getUserId());
         return "redirect:/userSystem/viewCart";
     }
-
-
-    // This route are already written
-
-//    @PostMapping("/checkout")
-//    public String checkout(HttpSession session) {
-//        User loggedInUser = (User) session.getAttribute("loggedUser");
-//
-//      //  userSer.checkoutCart(loggedInUser.getUserId());
-//
-//        return "redirect:/userSystem/orderConfirmation";  // Or another page
-//    }
-//
-//    @PostMapping("/placeOrder")
-//    public String placeOrder(HttpSession session) {
-//        User loggedInUser = (User) session.getAttribute("loggedUser");
-//      //  userSer.placeOrder(loggedInUser);
-//
-//        return "redirect:/viewOrders";
-//    }
 
     @GetMapping("/viewHistory")
     public String OrderHistory(HttpSession session,Model model){
@@ -318,9 +260,5 @@ public class UserController {
         model.addAttribute("orders",orders);
         return "viewOrders";
     }
-
-
-
-
 
 }

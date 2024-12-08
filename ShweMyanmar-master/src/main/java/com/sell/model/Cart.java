@@ -18,12 +18,8 @@ public class Cart {
     @JoinColumn(name = "user_id")
     private User user;
 
-//    item might be list in cart
-//    @ManyToOne
-//    @JoinColumn(name = "item_id")
-//    private Item item;
-@OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
-private List<CartItem> cartItems = new ArrayList<>();
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CartItem> cartItems = new ArrayList<>();
 
 
     public Cart() {
