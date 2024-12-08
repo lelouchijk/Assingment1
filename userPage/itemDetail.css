@@ -160,11 +160,242 @@ nav ul li a{
 }
 
 main{
-    margin-top: 150px;
+    margin-top: 108px;
+    width: 90%;
+    margin: 108px auto auto 100px;
+    
+}
+
+
+.main-div{
+    background-color: grey;
+    
+}
+
+.item-show-section{
+    margin-top: 130px;
+}
+
+.heading{
+    background-color: red;
+}
+
+.fav-div{
+    /* position: relative; */
 }
 
 
 
+.fav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fav ul li{
+    margin-left: 10px; 
+}
+
+
+.fav ul li button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.item-name-inner{
+    padding: 20px;
+}
+
+.itemImage-outter{
+
+    margin-left: 30px;
+}
+
+
+
+.itemImage img {
+    width: 100%;
+    height: auto; 
+}
+
+
+.singleImage-inner{
+    background-color: yellow;
+    width: 500px;
+    height: 400px;  
+    border-radius: 0.6rem;
+}
+
+.itemImage,
+.aboutItem-outter {
+    display: inline-block; 
+    vertical-align: top; 
+    width: 48%; 
+    box-sizing: border-box; 
+    margin-right: 2%;
+}
+
+.aboutItem-outter {
+    margin-right: 0;
+}
+
+.size{
+    padding: 20px 0px;
+}
+
+.size-button{
+    /* background: none; */
+    cursor: pointer;
+    width: 90%;
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    
+    
+}
+
+.size-button:focus {
+    outline: none;
+}
+
+.size-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px; 
+}
+
+.All-container {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center; 
+    gap: 2px; 
+    margin-left: auto; 
+}
+
+.size-p{
+    margin-left: 20px;
+}
+
+.all-p{
+    margin-right: 10px;
+}
+
+
+
+.All-container svg{
+    margin-right: 10px;
+}
+
+.buy-div{
+    width: 90%;
+    border-radius: 0.4rem;
+    height: 230px;
+    border: 1px solid var(--primary);
+}
+
+.buy-outter-div{
+    margin: auto;
+    width: 90%;
+    margin: auto;
+    padding: 10px 2px;
+}
+
+.past-sold h2{
+    padding: 5px 50px;
+    color: var(--orange);
+}
+
+.buy-div hr{
+    width: 90%;
+    margin: auto;
+    color: var(--dark);
+}
+
+.buy-button-outter{
+    border-radius: 0.4rem;
+    height: 3rem;
+    border: 1px solid var(--primary);
+    /* color: red; */
+}
+
+.buy-button-inner{
+    width: 100%;
+    border-radius: 0.4rem;
+    height: 3rem;
+    border: 1px solid var(--primary);
+    margin: auto;
+}
+
+.buy-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin: auto;
+} 
+.buy-button a {
+    width: 100%;
+    background-color: red;
+}
+
+.price-div{
+    margin: 10px 40px;
+    align-items: center;
+    
+}
+
+.price-p, .price {
+    display: inline-block;
+    color : red;
+}
+
+
+.product-description-section{
+    background-color: blue;
+}
+
+.product-description-section h3{
+    margin-left: 10px;
+}
+
+.product-description-inner{
+    background-color: red;
+}
+
+.product-description-grid{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+.right-product-div{
+    margin: 5px 20px;
+}
+
+.product-detail{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+}
+
+.product-detail span { 
+    flex: 1;
+}
+
+.product-detail p {
+    text-align: left;
+    flex: 1;
+    margin: 0;
+}
 
 
 footer{
