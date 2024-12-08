@@ -168,7 +168,7 @@ main{
 
 
 .main-div{
-    background-color: grey;
+    background-color: transparent;
     
 }
 
@@ -177,7 +177,7 @@ main{
 }
 
 .heading{
-    background-color: red;
+    background-color: transparent;
 }
 
 .fav-div{
@@ -199,10 +199,10 @@ main{
 
 
 .fav ul li button {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: transparent;
+    border: 1px solid transparent;
     border-radius: 4px;
-    padding: 8px 12px;
+    padding: 8px 10px;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -226,7 +226,8 @@ main{
 
 
 .singleImage-inner{
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 1px solid var(--primary);
     width: 500px;
     height: 400px;  
     border-radius: 0.6rem;
@@ -311,7 +312,7 @@ main{
 
 .past-sold h2{
     padding: 5px 50px;
-    color: var(--orange);
+    color: var(--primary);
 }
 
 .buy-div hr{
@@ -344,31 +345,35 @@ main{
 } 
 .buy-button a {
     width: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 
 .price-div{
     margin: 10px 40px;
     align-items: center;
+    margin-top: 20px;
     
 }
 
 .price-p, .price {
     display: inline-block;
-    color : red;
+    color : var(--primary);
+    cursor: wait;
 }
 
 
 .product-description-section{
-    background-color: blue;
+    margin-top: 20px;
+    /* background-color: blue; */
 }
 
 .product-description-section h3{
-    margin-left: 10px;
+    padding: 20px;
+    
 }
 
 .product-description-inner{
-    background-color: red;
+    /* background-color: red; */
 }
 
 .product-description-grid{
@@ -399,6 +404,7 @@ main{
 
 
 footer{
+    margin-top: 20px;
     background-color: var(--dark-grey);
 }
 
