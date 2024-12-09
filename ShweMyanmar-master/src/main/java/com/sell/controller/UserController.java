@@ -5,12 +5,15 @@ import com.sell.repository.RoleRepository;
 import com.sell.service.*;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/userSystem")
@@ -44,9 +47,12 @@ public class UserController {
     @GetMapping("/index")
     public String showMainPage(HttpSession session,Model model){
         User user = (User) session.getAttribute("loggedUser");
-        System.out.println(user.getUserId());
+        List<Item> itemList = adminSer.showAllItem();
+        List<Item> limitedItems = itemList.stream().limit(6).collect(Collectors.toList());
+        model.addAttribute("itemList",limitedItems);
         model.addAttribute("user",user);
-        return "main";
+//        return "main";
+        return "userMainPage";
     }
 
     @GetMapping("/createShop")
@@ -91,7 +97,6 @@ public class UserController {
         delivery.setDeliveryPerson(loggedInUser);
         deliSer.registerDelivery(delivery);
 
-
         if(loggedInUser.getRole().getRoleName()=="Customer"){
             Role userRole = roleRepo.findByRoleName("Delivery");
             loggedInUser.setRole(userRole);
@@ -123,10 +128,7 @@ public class UserController {
             model.addAttribute("item",userSer.getItem(id));
             model.addAttribute("categoryList",userSer.getAllCategory());
             return "updateItemCustomer";
-
     }
-
-
 
     @PostMapping("/updateItemProcess/{id}")
     public String updateItemProcess(@PathVariable("id")long id, @ModelAttribute("item") Item item,
@@ -136,7 +138,6 @@ public class UserController {
             userSer.updateItem(id, item, category,loggedUser);
             model.addAttribute("itemList",userSer.getItemsByUser(loggedUser));
             return "showItemCustomer";
-
     }
 
     @GetMapping("/deleteItem/{id}")
@@ -201,10 +202,18 @@ public class UserController {
     @GetMapping("/showAllItem")
     public String showAllItemPage(Model model, HttpSession session) {
         User user = (User) session.getAttribute("loggedUser");
-            List<Item> itemList = userSer.showAllItem();
+            List<Item> itemList = adminSer.showAllItem();
             model.addAttribute("itemList", itemList);
             return "showAllItem";
 
+    }
+
+    @GetMapping("/image/{itemId}")
+    @ResponseBody
+    public ResponseEntity<byte[]> getItemImage(@PathVariable Long itemId) {
+        Optional<Item> item = adminSer.getItemById(itemId);
+        byte[] image = item.get().getItemImage();
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image);
     }
 
 
@@ -214,9 +223,20 @@ public class UserController {
                             HttpSession session, Model model) {
         User user = (User)  session.getAttribute("loggedUser");
         userSer.addToCart(user, itemId, quantity);
+        System.out.println("itemId: " + itemId);
+        System.out.println("quantity: " + quantity);
         model.addAttribute("message", "Item added to cart!");
         return "redirect:/userSystem/showAllItem";
         }
+
+        @PostMapping("/removingItem")
+        public String removingItem(@RequestParam("itemId")long itemId,HttpSession session,
+                                   Model model){
+            User user = (User)  session.getAttribute("loggedUser");
+            userSer.removingItem(user,itemId);
+        return "redirect:/userSystem/showAllItem";
+        }
+
 
     @PostMapping("/buyAll")
     public String buyAll(HttpSession session, Model model) {

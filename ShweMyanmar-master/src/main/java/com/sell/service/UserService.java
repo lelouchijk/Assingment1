@@ -131,40 +131,11 @@ public class UserService {
     }
 
 
-//    public List<Cart> getAllCarts(long userId) {
-//        return cartRepo.findAll();
-//    }
-
-//    public List<Cart> getAllCart(User loggedUser){
-//        return cartRepo.fin
-//    }
 
     public List<CartItem> getAllCartItemsByUser(User loggedInUser) {
         return cartItemRepo.findByUser(loggedInUser);
 
     }
-
-
-//    public void checkoutCart(long userId) {
-//
-//        List<Cart> cartItems = cartRepo.findByUser_UserId(userId);
-//
-//        if (cartItems.isEmpty()) {
-//            throw new IllegalStateException("Cart is empty. Cannot proceed with checkout.");
-//        }
-//
-//        for (Cart cart : cartItems) {
-//            Order order = new Order();
-//            order.setItemName(cart.getItemName());
-//            order.setQuantity(cart.getQuantity());
-//            order.setPrice(cart.getTotal());
-//
-//            order.setUser(cart.getUser());
-//            orderRepo.save(order);
-//        }
-//
-//        cartRepo.deleteByUser_UserId(userId);
-//}
 
 
     @Transactional
@@ -224,27 +195,38 @@ public class UserService {
         cart.setTotal(totalPrice);
 
         cartRepo.save(cart);
+    }
+//
+//    @Transactional
+//    public void removingItem(User user,long itemId){
+//        List<Cart> userCarts = cartRepo.findByUser(user);
+//
+//    }
+    @Transactional
+    public void removingItem(User user,long itemId){
+        List<Cart> userCarts = cartRepo.findByUser(user);
+        Cart cart;
 
+        if (userCarts.isEmpty()) {
+            cart = new Cart();
+            cart.setUser(user);
+            cartRepo.save(cart);
+        } else {
+            cart = userCarts.get(0);
+        }
+        cartItemRepo.deleteById(itemId);
+        cartRepo.save(cart);
 
     }
+
+
+
 
     public List<Cart> getAllCartsByUser(User user) {
         return cartRepo.findByUser(user);
     }
 
-//    public void placeOrder(CartItem cartItem,long itemId) {
-//        Item item = itemRepo.findById(itemId)
-//                .orElseThrow(() -> new ItemNotFoundException("Item with ID " + itemId + " not found"));
-//
-//        if (cartItem.getItem() == null) {
-//            throw new IllegalStateException("CartItem has no items associated with it.");
-//        }
-//
-//        Order order = new Order(cartItem.getItemName(),cartItem.getQuantity(),cartItem.getPrice(),cartItem.getTotal(),cartItem.getUser());
-//        order.setStatus("Ordered");
-//        order.setShop(item.getShop());
-//        orderRepo.save(order);
-//}
+
 
 
     public void setOrder(User loggedInUser) {
@@ -294,33 +276,6 @@ public class UserService {
 }
 
 
-
-//
-//    public List<Cart> getCartItems(User user) {
-//
-//        return cartRepo.findAll();
-//    }
-//
-//    public void placeOrder(User user) {
-//        List<Cart> cartItems = getCartItems(user);
-//        for (Cart cart : cartItems) {
-//            Order order = new Order();
-//            order.setItemName(cart.getItemName());
-//            order.setQuantity(cart.getQuantity());
-//            order.setTotal(cart.getTotal());
-//            order.setUser(user);
-//            orderRepo.save(order);
-//        }
-//        cartRepo.deleteAll();
-//    }
-//    @Transactional
-//    public void clearCart(User user) {
-//        List<Cart> cartItems = cartRepo.findByUser(user);
-//        if (cartItems != null && !cartItems.isEmpty()) {
-//            cartRepo.deleteByUser(user);  // This needs a transaction
-//        }
-//    }
-//
 
 
 
