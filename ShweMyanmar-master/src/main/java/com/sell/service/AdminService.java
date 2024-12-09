@@ -68,7 +68,6 @@ public class AdminService {
 
 
 
-
     public List<Item> showAllItem(){
         return itemRepo.findAll();
     }

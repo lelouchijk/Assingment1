@@ -249,9 +249,6 @@ public class ShopController {
     }
 
 
-
-
-
     @GetMapping("/pendingDeliveries")
     public String viewPendingDeliveries(HttpSession session, Model model) {
         User shopOwner = (User) session.getAttribute("loggedUser");
@@ -302,8 +299,6 @@ public class ShopController {
 
     }
 
-
-
     @PostMapping("/assigingOrderToShopDelivery/{orderId}")
     public String assigingOrderToShopDelivery(@PathVariable ("orderId") long orderId){
 
@@ -319,8 +314,6 @@ public class ShopController {
         return "redirect:/shopSystem/pendingOrder";
 
     }
-
-
 
 
     @PostMapping("/confirmDeliveryPerson/{deliveryId}")

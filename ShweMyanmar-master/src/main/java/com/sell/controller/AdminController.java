@@ -149,17 +149,6 @@ public class AdminController {
 
         Optional<Item> existingItemOpt = adminSer.getItemById(id);
 
-
-//        if (loggedUser.getShops() == null || loggedUser.getShops().isEmpty()) {
-//            // Handle the case where the user has no shops
-//            Item item = itemMapper.convertToEntity(dto, category, null, loggedUser);
-//            adminSer.updateItem(id, item);
-//        } else {
-//            // Handle the case where the user has at least one shop
-//            Item item = itemMapper.convertToEntity(dto, category, loggedUser.getShops().get(0), loggedUser);
-//            adminSer.updateItem(id, item);
-//        }
-
         Item item = itemMapper.convertToEntity(dto, category, null, loggedUser);
         adminSer.updateItem(id, item);
 
