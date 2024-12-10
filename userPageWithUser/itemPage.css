@@ -1,4 +1,7 @@
 
+
+
+
 * {
     margin: 0px;
     padding: 0px;
@@ -9,6 +12,7 @@
 
 a {
 	text-decoration: none;
+    color: (var(--primary));
 }
 
 li {
@@ -58,12 +62,11 @@ nav{
     display: flex;
     gap: 30px;
     padding: 20px 10px;
-    
-    
-    
+
 }
 
 .my-nav ul li {
+
     list-style: none;
     
 }
@@ -73,7 +76,17 @@ nav ul li a{
     text-decoration: none;
     color: var(--primary);
     justify-content: center;
+
 }
+
+.profileImage img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 20px; 
+    object-fit: cover; 
+    display: block; 
+}
+
 .searchBar {
     width: 600px;
     height: 40px;
@@ -105,7 +118,7 @@ nav ul li a{
 
 .ppa-default-bar{
     width: 100%;
-    
+    /* border-bottom: var(--primary); */
     background-color: var(--primary);
     position: fixed;
     top: 80px;
@@ -114,7 +127,7 @@ nav ul li a{
 
 .ppa-bar{
    
-    margin: 3px auto;
+    margin:auto;
 }
 
 .ppa-bar ul{
@@ -127,22 +140,10 @@ nav ul li a{
     
 }
 
-.ppa-bar ul li {
-    
-    
-    
-}
-
-
 .ppa-bar ul li a{
     
     text-decoration: none;
     color: var(--secondary);
-}
-
-.ads-img{
-    width: 90%;
-    margin: 130px auto auto 60px;
 }
 
 .theme-change{
@@ -167,32 +168,87 @@ nav ul li a{
     color: whitesmoke;
 }
 
-.grid-recent-layout{
+.announcement{
+    border-color: #000000;
+    /* margin-top: 70px; */
+    padding: 50px;
+    width: 80%;
+    margin : 80px auto 20px auto;
     
-    /* width: 90%; */
+    
+}
+
+.sec-announ{
+    background-color: var(--dark);
     padding: 20px;
+    border-radius: 0.4rem;
+}
+
+
+
+.grid-recent-layout{
+
+    display: grid;
+    grid-template-columns: 20% 70%;
+
+}
+
+
+.sec-sidebar{
+    /* background-color: black; */
+    width: 80%;
     margin: auto;
-
-    
     
 }
 
-.recent-view{
-    background-color: transparent;
-    color: var(--primary);
-    margin-bottom: 20px;
-    
+.sidebar-element{
+    border: var(--primary);
+    /* padding: 10px 0; */
 }
 
-.recent-view a{
-    background-color: transparent;
-    color: var(--primary);
-    font-size: 15px;
-    text-decoration: none;
-    margin-left: 1000px;
-   
+.sidebar-element hr{
+    color: var(--dark);
 }
 
+
+
+.element-name{
+    display: flex;
+}
+
+.element-button{
+    width: 100%;   
+    border: none;
+    background-color: var(--secondary);
+    cursor: pointer;
+    padding: 15px 0px;
+}
+
+.element-button p{
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.outter-div-child-element {
+    display: none;
+    transition: all 1s ease-in-out;
+}
+
+.outter-div-child-element.active {
+    display: block;
+}
+
+
+.element-button svg{
+    display: inline-block;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.inner-div-child-element{
+    padding: 8px 8px;
+}
 
 
 .grid-layout-recent{
@@ -208,20 +264,20 @@ nav ul li a{
 }
 
 .recent-view-box{
+    
     height: 100%;
 }
 
 .recent-view-box-inner{
+    /* background-color: #000000; */
     height: 228px;
 }
 
-.fixed-size-image {
+.item-box{
     background-color: black;
     height: 107px;
     border-radius: 0.6rem;
 }
-
-
 
 .item-info{
     display: flex;
@@ -278,6 +334,24 @@ nav ul li a{
     border: none;
 }
 
+.recommend-product-layout{
+    width: 98%;
+    height: 294px;
+    background-color: whitesmoke;
+    margin: 140px auto; /*140px is top bottom/ auto is left right */
+
+}
+.grid-layout-recommend{
+    display: grid;
+    grid-template-rows: repeat(6,1fr);
+    list-style: none;
+    /* border-radius: 10px; */
+    border-color: black;
+}
+.recommend-layout-recommend li{
+    background-color: black;
+    border-radius: 5px;
+}
 
 
 footer{

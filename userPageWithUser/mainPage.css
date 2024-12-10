@@ -74,6 +74,15 @@ nav ul li a{
     color: var(--primary);
     justify-content: center;
 }
+
+.profileImage img {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 20px; 
+    object-fit: cover; 
+    display: block; 
+}
+
 .searchBar {
     width: 600px;
     height: 40px;
